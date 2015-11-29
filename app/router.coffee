@@ -12,7 +12,7 @@ Router.map ->
   @route 'users', -> 
     @route 'new'
     return
-  @ressource 'user', path: 'users/:user_id', ->
+  @resource 'user', path: 'users/:user_id', ->
     @route 'edit'
     @route 'delete'
     return
