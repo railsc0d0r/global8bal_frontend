@@ -15,4 +15,9 @@ nav class="navbar navbar-inverse navbar-fixed-top"
 = outlet
 
 footer
-  | footer
+  div class="container"
+    hr
+    a href="http://3trip.de/" target="_blank"
+      ' © 3trip.de |
+    a href="https://www.facebook.com/Global8Ball" target="_blank"
+      img src="img/fb_button.png" alt="Find us on Facebook" height="16px" width="16px"
