@@ -11,8 +11,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         | global8ball.com
     #navbar.navbar-collapse.collapse
       .navbar-form.navbar-right
-        = link-to 'login' class="btn btn-default"
-          | LOGIN
+        if session.isAuthenticated
+          a href="#" click='invalidateSession' LOGOUT
+        else
+          = link-to 'login' class="btn btn-default"
+            | LOGIN
 = outlet
 
 footer
