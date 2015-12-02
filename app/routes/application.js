@@ -23,7 +23,7 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   },
 
   _cleanUpAndTransition() {
-    $.modal.close();
+    $('.modal').modal('hide');
     this.transitionTo('application');
     this.controllerFor('messages').send('successfulAuthenticated');
   },

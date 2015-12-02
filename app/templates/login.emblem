@@ -1,1 +1,30 @@
-= outlet
+#login_form.modal.fade
+  .modal-dialog
+    .modal-content
+      if errorMessage
+        .modal-header
+          #error_messages
+            ' Login failed:
+            = errorMessage
+      form submit='authenticate'
+        .row
+          .col-md4
+            label for='identification'
+              | Login:
+          .col-md4
+            = input id='login' placeholder='Enter Login' value=login
+        .row
+          .col-md4
+            label for='password'
+              | Password:
+          .col-md4
+            = input id='password' placeholder='Enter Password' type='password' value=password
+        .row
+          .col-md4
+            label for='submit'
+              |
+          .col-md4
+            input type='submit' value='Login'
+      .modal-footer
+        a.btn.btn-default click='close'
+          | Close
