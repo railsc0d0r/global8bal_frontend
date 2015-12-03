@@ -1,4 +1,18 @@
 div class="jumbotron logos"
   div class="container"
+    .row
+      img.our_logo src="#{rails_asset_url 'logo.png'}" alt="our Logo" height="55%" width="55%"
+      h1
+        |
+    .row
+      .col-md-4.logo
+        a href="http://www.wpa-pool.com/web/index.asp" target="_blank"
+          img.logo src="#{rails_asset_url 'wpa.png'}" alt="WPA Logo" height="50%" width="50%"
+      .col-md-4.logo
+        a href="http://europeanpocketbilliardfederation.com/" target="_blank"
+          img.logo src="#{rails_asset_url 'epbf.png'}" alt="EPBF Logo" height="50%" width="50%"
+      .col-md-4.logo
+        a href="http://eurotouronline.com/" target="_blank"
+          img.logo src="#{rails_asset_url 'ibpf.png'}" alt="IPBF Logo" height="50%" width="50%"
 div class="container content"
   | started
