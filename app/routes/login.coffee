@@ -3,12 +3,12 @@
 
 LoginRoute = Ember.Route.extend(UnauthenticatedRouteMixin,
   renderTemplate: ->
-        this.render('index',
-          controller: 'index'
+        this.render('index'
+          into: 'application'
+          outlet: 'index'
         )
         this.render('login',
           into: 'application'
-          controller: 'login'
           outlet: 'modal'
         )
         return

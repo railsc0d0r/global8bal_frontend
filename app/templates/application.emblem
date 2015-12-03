@@ -16,7 +16,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         else
           = link-to 'login' class="btn btn-default"
             | LOGIN
-= outlet
+= outlet "index"
 = outlet "modal"
 
 footer
