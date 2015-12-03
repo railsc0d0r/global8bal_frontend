@@ -17,6 +17,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           = link-to 'login' class="btn btn-default"
             | LOGIN
 = outlet
+= outlet "modal"
 
 footer
   .container
