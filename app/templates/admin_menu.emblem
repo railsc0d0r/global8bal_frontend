@@ -1,0 +1,8 @@
+#admin_menu.dropdown
+  a.btn.btn-default.dropdown-toggle type="button" id="toggle_admin_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+    | Administration
+    span.caret
+  ul.dropdown-menu aria-labelledby="toggle_admin_menu"
+    li
+      a href="#"
+        | Employees
