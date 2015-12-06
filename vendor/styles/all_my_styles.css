@@ -17,6 +17,9 @@ footer {
   margin-bottom: 2vh;
   padding: 0 15px;
 }
+label {
+    min-width: 10vw;
+}
 /* ============================================================
   Standard bootstrap-classes
 ============================================================ */
@@ -77,7 +80,6 @@ footer {
 /* ============================================================
   My elements
 ============================================================ */
-#admin_menu {
-    display: inline;
-    padding: 0 1vw;
+#admin_menu.input-group-addon {
+    text-align: left;
 }
