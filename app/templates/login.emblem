@@ -8,22 +8,18 @@
             = errorMessage
       form submit='authenticate'
         .row
-          .col-md4
-            label for='identification'
+          .input-group	
+            label.input-group-addon for='identification'
               | Login:
-          .col-md4
-            = input id='login' placeholder='Enter Login' value=login
+            = input id='login' placeholder='Enter Login' value=login class="form-control"
         .row
-          .col-md4
-            label for='password'
+          .input-group	
+            label.input-group-addon for='password'
               | Password:
-          .col-md4
-            = input id='password' placeholder='Enter Password' type='password' value=password
+            = input id='password' placeholder='Enter Password' type='password' value=password class="form-control"
+        br
         .row
-          .col-md4
-            label for='submit'
-              |
-          .col-md4
+          .input-group	
             input type='submit' value='Login'
       .modal-footer
         a.btn.btn-default click='close'
