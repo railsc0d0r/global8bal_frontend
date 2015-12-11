@@ -77,9 +77,23 @@ label {
 .prize {
   text-align: right;
 }
+.message {
+    background: #31cb03;
+}
+.error {
+    background: #f31212;
+}
 /* ============================================================
   My elements
 ============================================================ */
 #admin_menu.input-group-addon {
     text-align: left;
+}
+#messagePopUp {
+    position: fixed;
+    text-align: center;
+    opacity: 1.0;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
 }
