@@ -1,5 +1,5 @@
 .container
-  .content style="margin-top: 8vh;"
+  .content style="margin-top: 3vh;"
     .add_link
       = link-to 'employees.new'
         img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"

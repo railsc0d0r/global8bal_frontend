@@ -15,6 +15,7 @@ a:hover {
 }
 footer {
   margin-bottom: 2vh;
+  min-height: 5vh;  
   padding: 0 15px;
 }
 label {
@@ -53,7 +54,7 @@ label {
   color: #111;
 }
 .content {
-  min-height: 20vh;
+  min-height: 85vh;
   padding-top: 8vh;
 }
 .content h1,h2,h3 {
