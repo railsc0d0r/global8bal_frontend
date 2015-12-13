@@ -1,1 +1,12 @@
-{{outlet}}
+.container
+  .content style="margin-top: 8vh;"
+    .add_link
+      = link-to 'employees.new'
+        img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"
+    .modal.fade
+      = outlet
+    each model as |employee|
+      | employee goes here.
+    else
+      | No employees yet.
+
