@@ -15,13 +15,13 @@ Router.map ->
     @route 'edit'
     @route 'delete'
     return
-  return
-  @resource 'employees', ->
+  @route 'employees', ->
     @route 'new'
     return
   @resource 'employee', path: 'employees/:employee_id', ->
     @route 'edit'
     @route 'delete'
     return
+  return
 
 `export default Router`
