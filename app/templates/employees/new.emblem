@@ -1,0 +1,65 @@
+#employee_form.modal.fade
+  .modal-dialog
+    .modal-content
+      if errorMessage
+        #error-messages
+          ' Creating employee failed:
+          = errorMessage
+      form submit='createEmployee'
+        .row
+          .input-group
+            label.input-group-addon for='password'
+              | Password:
+            = input id='password' placeholder='Enter Password' value=password class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='password_confirmation'
+              | Confirm Password:
+            = input id='password_confirmation' placeholder='Confirm Password' value=password_confirmation class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='firstname'
+              | Firstname:
+            = input id='firstname' placeholder='Enter Firstname' value=firstname class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='lastname'
+              | Lastname:
+            = input id='lastname' placeholder='Enter Lastname' value=lastname class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='email'
+              | Email:
+            = input id='email' placeholder='Enter Email' value=email class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='street'
+              | Street:
+            = input id='street' placeholder='Enter Street' value=street class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='street2'
+              | Street additional information:
+            = input id='street2' placeholder='Enter additional information' value=street2 class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='zip'
+              | Zipcode:
+            = input id='zip' placeholder='Enter Zipcode' value=zip class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='city'
+              | City:
+            = input id='city' placeholder='Enter City' value=city class='form-control'
+        .row
+          .input-group
+            label.input-group-addon for='country'
+              | Country:
+            = input id='country' placeholder='Enter Country' value=country class='form-control'
+        br
+        .row
+          .input-group	
+            input type='submit' value='Login'
+      .modal-footer
+        a.btn.btn-default click='close'
+          | Close
