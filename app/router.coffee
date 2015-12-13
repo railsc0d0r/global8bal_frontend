@@ -4,7 +4,6 @@
 Router = Ember.Router.extend
   location: config.locationType
 
-
 Router.map -> 
 
   @route 'login'
@@ -17,5 +16,12 @@ Router.map ->
     @route 'delete'
     return
   return
+  @resource 'employees', ->
+    @route 'new'
+    return
+  @resource 'employee', path: 'employees/:employee_id', ->
+    @route 'edit'
+    @route 'delete'
+    return
 
 `export default Router`
