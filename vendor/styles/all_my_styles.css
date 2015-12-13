@@ -93,7 +93,7 @@ label {
     position: fixed;
     text-align: center;
     opacity: 1.0;
-    top: 0;
+    bottom: 0;
     width: 100vw;
     z-index: 99;
 }
