@@ -83,6 +83,14 @@ label {
 .error {
     background: #f31212;
 }
+.add_link{
+    padding-right: 5vh;
+    float: right;
+}
+img.app_icon {
+    width: 4vw;
+    height: 4vw;
+}
 /* ============================================================
   My elements
 ============================================================ */
