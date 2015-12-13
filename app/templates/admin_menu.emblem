@@ -4,5 +4,5 @@
     span.caret
   ul.dropdown-menu.dropdown-menu-left aria-labelledby="toggle_admin_menu"
     li
-      a href="#"
+      = link-to 'employees'
         | Employees
