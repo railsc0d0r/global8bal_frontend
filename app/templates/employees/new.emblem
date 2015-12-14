@@ -1,4 +1,4 @@
-#employee_form.modal.fade
+#new_employee_form.modal.fade
   .modal-dialog
     .modal-content
       if errorMessage
@@ -39,7 +39,7 @@
         .row
           .input-group
             label.input-group-addon for='street2'
-              | Street additional information:
+              | 
             = input id='street2' placeholder='Enter additional information' value=street2 class='form-control'
         .row
           .input-group
