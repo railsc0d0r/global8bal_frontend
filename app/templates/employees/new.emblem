@@ -8,6 +8,11 @@
       form submit='createEmployee'
         .row
           .input-group
+            label.input-group-addon for='role_name'
+              | Role:
+            = view 'select' id='role' content=model optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role_name class='form-control selectpicker' 
+        .row
+          .input-group
             label.input-group-addon for='password'
               | Password:
             = input id='password' placeholder='Enter Password' value=password class='form-control'
@@ -59,7 +64,7 @@
         br
         .row
           .input-group	
-            input type='submit' value='Login'
+            input type='submit' value='Save'
       .modal-footer
         a.btn.btn-default click='close'
           | Close
