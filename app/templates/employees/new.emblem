@@ -15,12 +15,12 @@
           .input-group
             label.input-group-addon for='password'
               | Password:
-            = input id='password' placeholder='Enter Password' value=password class='form-control'
+            = input id='password' type="password" placeholder='Enter Password' value=password class='form-control'
         .row
           .input-group
             label.input-group-addon for='password_confirmation'
               | Confirm Password:
-            = input id='password_confirmation' placeholder='Confirm Password' value=password_confirmation class='form-control'
+            = input id='password_confirmation' type="password" placeholder='Confirm Password' value=password_confirmation class='form-control'
         .row
           .input-group
             label.input-group-addon for='firstname'
@@ -64,7 +64,7 @@
         br
         .row
           .input-group	
-            input type='submit' value='Save'
+            input.btn.btn-default type='submit' value='Save'
       .modal-footer
         a.btn.btn-default click='close'
           | Close
