@@ -42,6 +42,9 @@ label {
 .modal-footer {
     margin-top: 10px;
 }
+.input-group-addon {
+    text-align: left;
+}
 /* ============================================================
   Container-classes
 ============================================================ */
