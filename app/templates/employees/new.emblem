@@ -10,7 +10,7 @@
           .input-group
             label.input-group-addon for='role_name'
               | Role:
-            = view 'select' id='role' content=model optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role_name class='form-control selectpicker' 
+            = view 'select' id='role' content=roles optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role_name class='form-control selectpicker' 
         .row
           .input-group
             label.input-group-addon for='password'
@@ -60,7 +60,7 @@
           .input-group
             label.input-group-addon for='country'
               | Country:
-            = input id='country' placeholder='Enter Country' value=country class='form-control'
+            = view 'select' id='country' content=countries optionLabelPath="content.name" optionValuePath="content.code" prompt='Select Country' selection=country class='form-control' 
         br
         .row
           .input-group	
