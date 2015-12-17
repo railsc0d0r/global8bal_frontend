@@ -1,0 +1,7 @@
+.dialog.modal.fade
+  .modal-dialog
+    .modal-header
+      a.btn.btn-default click='closeDialogAction'
+        | Close
+    .modal-content
+      = yield
