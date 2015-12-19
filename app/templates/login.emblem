@@ -1,26 +1,20 @@
-#login_form.modal.fade
-  .modal-dialog
-    .modal-content
-      if errorMessage
-        .modal-header
-          #error_messages
-            ' Login failed:
-            = errorMessage
-      form submit='authenticate'
-        .row
-          .input-group	
-            label.input-group-addon for='identification'
-              | Login:
-            = input id='login' placeholder='Enter Login' value=login class="form-control"
-        .row
-          .input-group	
-            label.input-group-addon for='password'
-              | Password:
-            = input id='password' placeholder='Enter Password' type='password' value=password class="form-control"
-        br
-        .row
-          .input-group	
-            input type='submit' value='Login'
-      .modal-footer
-        a.btn.btn-default click='close'
-          | Close
+= modal-dialog closeDialogAction="close"
+  if errorMessage
+     #error_messages
+       ' Login failed:
+       = errorMessage
+  form submit='authenticate'
+    .row
+      .input-group	
+        label.input-group-addon for='identification'
+          | Login:
+        = input id='login' placeholder='Enter Login' value=login class="form-control"
+    .row
+      .input-group	
+        label.input-group-addon for='password'
+          | Password:
+        = input id='password' placeholder='Enter Password' type='password' value=password class="form-control"
+    br
+    .row
+      .input-group	
+        input type='submit' value='Login'
