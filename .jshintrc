@@ -2,7 +2,9 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "_",
+    "$"
   ],
   "browser": true,
   "boss": true,
@@ -28,6 +30,5 @@
   "white": false,
   "eqnull": true,
   "esnext": true,
-  "_": true,
   "unused": true
 }
