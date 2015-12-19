@@ -1,7 +1,9 @@
 .dialog.modal.fade
   .modal-dialog
-    .modal-header
-      a.btn.btn-default click='closeDialogAction'
-        | Close
     .modal-content
-      = yield
+      .modal-body
+        .row
+          a href="#" click='closeDialog' style="float: right; clear: both;"
+            img src="#{rails_asset_url 'icons/close_icon.svg'}" alst="Close" class="app_icon"
+        br
+        = yield
