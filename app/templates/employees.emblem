@@ -1,11 +1,16 @@
 .container
   .content style="margin-top: 3vh;"
-    .add_link
-      = link-to 'employees.new'
-        img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"
-    = outlet
+    .row
+      .add_link
+        = link-to 'employees.new'
+          img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"
     each model as |employee|
-      | employee goes here.
+      .well
+        .row
+          | Name: #{employee.firstname} #{employee.lastname}
+        .row
+          | Role: #{employee.role_name}
     else
       | No employees yet.
 
+    = outlet
