@@ -88,12 +88,13 @@ label {
     background: #f31212;
 }
 .add_link{
-    padding-right: 5vh;
+    padding: 2vh 0;
     float: right;
+    clear: both;
 }
 img.app_icon {
-    width: 4vw;
-    height: 4vw;
+    width: 2vw;
+    height: 2vw;
 }
 /* ============================================================
   My elements
