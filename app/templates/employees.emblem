@@ -10,6 +10,19 @@
           | Name: #{employee.firstname} #{employee.lastname}
         .row
           | Role: #{employee.role_name}
+        .row
+          | Email: #{employee.email}
+        .row
+          | Address:
+        .row
+          | #{employee.street}
+        .row
+          | #{employee.street2}
+        .row
+          | #{employee.zip} #{employee.city}
+        .row
+          | #{employee.country}
+
     else
       | No employees yet.
 
