@@ -8,6 +8,8 @@ MessagesController = Ember.Controller.extend(
     loggingOut: () ->
       this._showMessage("Logging out.")
     
+    successfullyCreated: (object_name) ->
+      this._showMessage(object_name + " successfully created.")
     
     showErrorMsg: (msg) ->
       this._showError("Error: " + msg)
@@ -22,7 +24,7 @@ MessagesController = Ember.Controller.extend(
     
   _showPopUp: (content) ->
     $('body').prepend(content)
-    $('#messagePopUp').fadeOut(2000, () -> $('#messagePopUp').remove())
+    $('#messagePopUp').fadeOut(10000, () -> $('#messagePopUp').remove())
 )
 
 `export default MessagesController`
