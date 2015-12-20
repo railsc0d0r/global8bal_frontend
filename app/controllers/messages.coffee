@@ -24,7 +24,7 @@ MessagesController = Ember.Controller.extend(
     
   _showPopUp: (content) ->
     $('body').prepend(content)
-    $('#messagePopUp').fadeOut(10000, () -> $('#messagePopUp').remove())
+    $('#messagePopUp').fadeOut(5000, () -> $('#messagePopUp').remove())
 )
 
 `export default MessagesController`

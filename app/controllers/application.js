@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       var _this = this;
       setTimeout(function(){
         _this.get('session').invalidate();
-      },2300);
+      },4000);
     }
   }
 
