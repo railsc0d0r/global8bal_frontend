@@ -110,3 +110,9 @@ img.app_icon {
     width: 100vw;
     z-index: 99;
 }
+#errorMessage {
+    background: #f4b0b0;
+    color: #543232;
+    border: 1px solid #543232;
+    padding: 0.5vh 0.5vw;
+}

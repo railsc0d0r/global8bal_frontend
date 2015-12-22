@@ -1,7 +1,8 @@
 = modal-dialog closeDialogAction="close"
   if errorMessage
-    #error-messages
-      ' Creating employee failed:
+    #errorMessage
+      | Creating employee failed:
+      br
       = errorMessage
   form submit='createEmployee'
     .row
