@@ -21,19 +21,21 @@ EmployeesNewController = Ember.Controller.extend(
         country = this.get('country.name') if this.get('country')
 
         attributes = { role_name: role_name, password: password, password_confirmation: password_confirmation, email: email, firstname: firstname, lastname: lastname, street: street, street2: street2, zip: zip, city: city, country: country }
-        if role_name && password && password_confirmation && email && firstname && lastname
-          employee = this.store.createRecord('employee', attributes)
-          self = this
-          employee.save().then((newEmployee) ->
+        employee = this.store.createRecord('employee', attributes)
+        self = this
+        employee.save().then((newEmployee) ->
                 self._close()
                 self.transitionToRoute('employees')
                 console.log('Employee created.')
                 self.controllerFor('messages').send('successfullyCreated', "Employee '" + lastname + ", " + firstname + "'")
             ).catch((error) ->
-                console.log("Employee couldn't be created:" + error.message)
+                errorMessage = self._joinErrorMessages(error.errors)
+                self.set('errorMessage', errorMessage)
+                console.log("Employee couldn't be created:" + errorMessage)
+                employee.transitionTo('created.uncommitted')
+                employee.deleteRecord()
+                return
             )
-        else
-          this.controllerFor('messages').send('showErrorMsg', 'Please fill in all the fields')
 
     close: () ->
         this._close()
@@ -50,8 +52,15 @@ EmployeesNewController = Ember.Controller.extend(
             this.set('zip', null)
             this.set('city', null)
             this.set('country', null)
+            this.set('errorMessage', null)
             $('.modal').modal('hide')
             this.transitionToRoute('employees')
+  _joinErrorMessages: (errors) ->
+        console.log("errors")
+        console.log(errors)
+        messages = _.pluck(errors, 'title')
+        errorMessage = messages.join(", ")
+        return errorMessage
 )
 
 `export default EmployeesNewController`
