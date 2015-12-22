@@ -56,8 +56,6 @@ EmployeesNewController = Ember.Controller.extend(
             $('.modal').modal('hide')
             this.transitionToRoute('employees')
   _joinErrorMessages: (errors) ->
-        console.log("errors")
-        console.log(errors)
         messages = _.pluck(errors, 'title')
         errorMessage = messages.join(", ")
         return errorMessage
