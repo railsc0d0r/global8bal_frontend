@@ -1,6 +1,8 @@
 `import Ember from 'ember'`
 
 EmployeesNewController = Ember.Controller.extend(
+  errorHandler: Ember.inject.service('handle-errors')
+
   roles: Ember.computed(() ->
         return this.store.findAll('role'))
   countries: Ember.computed(() ->
@@ -29,7 +31,7 @@ EmployeesNewController = Ember.Controller.extend(
                 console.log('Employee created.')
                 self.controllerFor('messages').send('successfullyCreated', "Employee '" + lastname + ", " + firstname + "'")
             ).catch((error) ->
-                errorMessage = self._joinErrorMessages(error.errors)
+                errorMessage = self.get('errorHandler').joinErrorMessages(error.errors)
                 self.set('errorMessage', errorMessage)
                 console.log("Employee couldn't be created:" + errorMessage)
                 employee.transitionTo('created.uncommitted')
@@ -55,10 +57,6 @@ EmployeesNewController = Ember.Controller.extend(
             this.set('errorMessage', null)
             $('.modal').modal('hide')
             this.transitionToRoute('employees')
-  _joinErrorMessages: (errors) ->
-        messages = _.pluck(errors, 'title')
-        errorMessage = messages.join(", ")
-        return errorMessage
 )
 
 `export default EmployeesNewController`
