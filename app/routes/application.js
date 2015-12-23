@@ -5,8 +5,11 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   init: function() {
     const _this = this;
 
+    this._populateCurrentCountries();
+
     this.get('session').on('authenticationSucceeded', function() {
       _this._populateCurrentUser();
+      _this._populateCurrentRoles();
       _this._cleanUpAndTransition();
       _this.refresh();
     });
@@ -19,6 +22,7 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
 
     if (session.get('isAuthenticated')) {
       this._populateCurrentUser();
+      this._populateCurrentRoles();
     }
   },
 
@@ -26,6 +30,14 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
     $('.modal').modal('hide');
     this.transitionTo('application');
     this.controllerFor('messages').send('successfulAuthenticated');
+  },
+
+  _populateCurrentRoles() {
+    return this.store.findAll('role').then(roles => this.get('currentRoles').set('content', roles) && roles);
+  },
+
+  _populateCurrentCountries() {
+    return this.store.findAll('country').then(countries => this.get('currentCountries').set('content', countries) && countries);
   },
 
   _populateCurrentUser() {
