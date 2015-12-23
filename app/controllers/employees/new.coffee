@@ -3,11 +3,6 @@
 EmployeesNewController = Ember.Controller.extend(
   errorHandler: Ember.inject.service('handle-errors')
 
-  roles: Ember.computed(() ->
-        return this.store.findAll('role'))
-  countries: Ember.computed(() ->
-        return this.store.findAll('country'))
-
   actions:
     createEmployee: () ->
         role_name = this.get('role.name') if this.get('role')
