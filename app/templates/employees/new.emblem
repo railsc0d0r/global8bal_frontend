@@ -59,7 +59,7 @@
       .input-group
         label.input-group-addon for='country'
           | Country:
-        = view 'select' id='country' content=currentCountries.content optionLabelPath="content.name" optionValuePath="content.code" prompt='Select Country' selection=country class='form-control'
+        = view 'select' id='country' content=currentCountries.content optionLabelPath="content.name" optionValuePath="content.id" prompt='Select Country' selection=country class='form-control'
     br
     .row
       .input-group	
