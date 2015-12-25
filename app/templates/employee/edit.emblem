@@ -1,0 +1,66 @@
+= modal-dialog closeDialogAction="close"
+  if errorMessage
+    #errorMessage
+      | Updating employee failed:
+      br
+      = errorMessage
+  form submit='updateEmployee'
+    .row
+      .input-group
+        label.input-group-addon for='role_name'
+          | Role:
+        = view 'select' id='role' content=currentRoles optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role value = model.role_name class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='password'
+          | Password:
+        = input id='password' type="password" placeholder='Enter Password' value=model.password class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='password_confirmation'
+          | Confirm Password:
+        = input id='password_confirmation' type="password" placeholder='Confirm Password' value=model.password_confirmation class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='firstname'
+          | Firstname:
+        = input id='firstname' placeholder='Enter Firstname' value=model.firstname class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='lastname'
+          | Lastname:
+        = input id='lastname' placeholder='Enter Lastname' value=model.lastname class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='email'
+          | Email:
+        = input id='email' placeholder='Enter Email' value=model.email class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='street'
+          | Street:
+        = input id='street' placeholder='Enter Street' value=model.street class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='street2'
+          |
+        = input id='street2' placeholder='Enter additional information' value=model.street2 class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='zip'
+          | Zipcode:
+        = input id='zip' placeholder='Enter Zipcode' value=model.zip class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='city'
+          | City:
+        = input id='city' placeholder='Enter City' value=model.city class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='country'
+          | Country:
+        = view 'select' id='country' content=currentCountries optionLabelPath="content.name" optionValuePath="content.id" prompt='Select Country' selection=country value=model.country class='form-control'
+    br
+    .row
+      .input-group
+        input.btn.btn-default type='submit' value='Save'
