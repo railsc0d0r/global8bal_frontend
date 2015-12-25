@@ -10,6 +10,8 @@
           div style="float: right; clear: both;"
             = link-to 'employee.edit' employee
               img src="#{rails_asset_url 'icons/edit_icon.svg'}" alt='Edit' class='app_icon'
+            = link-to 'employee.delete' employee
+              img src="#{rails_asset_url 'icons/delete_icon.svg'}" alt='Delete' class='app_icon'
         .row
           .col-md-6
             .row  
