@@ -6,8 +6,8 @@ EmployeeEditController = Ember.Controller.extend(
   actions:
     updateEmployee: () ->
         employee = this.get('model')
-        employee.set('role_name', this.get('role.name'))
-        employee.set('country', this.get('country.name'))
+        employee.set('role_name', this.get('role.name')) if this.get('role')
+        employee.set('country', this.get('country.name')) if this.get('country')
 
         that = this
         employee.save().then(() ->
