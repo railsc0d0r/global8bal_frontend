@@ -11,6 +11,9 @@ MessagesController = Ember.Controller.extend(
     successfullyCreated: (object_name) ->
       this._showMessage(object_name + " successfully created.")
     
+    successfullyUpdated: (object_name) ->
+      this._showMessage(object_name + " successfully updated.")
+
     showErrorMsg: (msg) ->
       this._showError("Error: " + msg)
     
