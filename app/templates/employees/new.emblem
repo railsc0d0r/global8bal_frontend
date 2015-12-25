@@ -9,7 +9,7 @@
       .input-group
         label.input-group-addon for='role_name'
           | Role:
-        = view 'select' id='role' content=currentRoles.content optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role class='form-control'
+        = view 'select' id='role' content=currentRoles optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role class='form-control'
     .row
       .input-group
         label.input-group-addon for='password'
@@ -59,7 +59,7 @@
       .input-group
         label.input-group-addon for='country'
           | Country:
-        = view 'select' id='country' content=currentCountries.content optionLabelPath="content.name" optionValuePath="content.id" prompt='Select Country' selection=country class='form-control'
+        = view 'select' id='country' content=currentCountries optionLabelPath="content.name" optionValuePath="content.id" prompt='Select Country' selection=country class='form-control'
     br
     .row
       .input-group	
