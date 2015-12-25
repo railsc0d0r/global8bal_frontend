@@ -19,15 +19,15 @@ EmployeesNewController = Ember.Controller.extend(
 
         attributes = { role_name: role_name, password: password, password_confirmation: password_confirmation, email: email, firstname: firstname, lastname: lastname, street: street, street2: street2, zip: zip, city: city, country: country }
         employee = this.store.createRecord('employee', attributes)
-        self = this
-        employee.save().then((newEmployee) ->
-                self._close()
-                self.transitionToRoute('employees')
+        that = this
+        employee.save().then(() ->
+                that._close()
+                that.transitionToRoute('employees')
                 console.log('Employee created.')
-                self.controllerFor('messages').send('successfullyCreated', "Employee '" + lastname + ", " + firstname + "'")
+                that.controllerFor('messages').send('successfullyCreated', "Employee '" + employee.get('lastname') + ", " + employee.get('firstname') + "'")
             ).catch((error) ->
-                errorMessage = self.get('errorHandler').joinErrorMessages(error.errors)
-                self.set('errorMessage', errorMessage)
+                errorMessage = that.get('errorHandler').joinErrorMessages(error.errors)
+                that.set('errorMessage', errorMessage)
                 console.log("Employee couldn't be created:" + errorMessage)
                 employee.transitionTo('created.uncommitted')
                 employee.deleteRecord()
