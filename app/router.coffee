@@ -17,10 +17,9 @@ Router.map ->
     return
   @route 'employees', ->
     @route 'new'
-    return
-  @resource 'employee', path: 'employees/:employee_id', ->
-    @route 'edit'
-    @route 'delete'
+    @resource 'employee', path: ':employee_id', ->
+      @route 'edit'
+      @route 'delete'
     return
   return
 
