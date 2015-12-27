@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
+`import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';`
 
-EmployeeDeleteRoute = Ember.Route.extend(
+EmployeeDeleteRoute = Ember.Route.extend(AuthenticatedRouteMixin,
   errorHandler: Ember.inject.service('handle-errors')
 
   model: () -> this.modelFor('employee')

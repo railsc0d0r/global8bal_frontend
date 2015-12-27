@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
+`import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';`
 
-EmployeesNewRoute = Ember.Route.extend(
-)
+EmployeesNewRoute = Ember.Route.extend(AuthenticatedRouteMixin)
 
 `export default EmployeesNewRoute`
