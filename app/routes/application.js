@@ -2,6 +2,7 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
+  intl: Ember.inject.service(),
   init: function() {
     const _this = this;
 
@@ -15,6 +16,10 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
     });
 
     this._super.apply(this, arguments);
+  },
+
+  beforeModel() {
+    this.get('intl').setLocale('en');
   },
 
   afterModel() {
