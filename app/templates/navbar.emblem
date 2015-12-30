@@ -11,12 +11,14 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         | global8ball.com
     #navbar.navbar-collapse.collapse
       .navbar-form.navbar-right
-        if session.isAuthenticated
-          | #{currentUser.email}  
-          .btn-group style="margin-left: 1vw;"
+        .btn-group
+          if session.isAuthenticated
             if currentUser.is_admin
               = partial "admin_menu"
+            div.btn.btn-default
+              = currentUser.email
             a href="#" class="btn btn-default" click='invalidateSession' LOGOUT
-        else
-          = link-to 'login' class="btn btn-default"
-            | LOGIN
+          else
+            = link-to 'login' class="btn btn-default"
+              | LOGIN
+          = partial "language_menu"

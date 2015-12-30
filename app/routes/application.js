@@ -32,6 +32,13 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
     }
   },
 
+  actions: {
+    setLocale(locale) {
+      const intl = this.get('intl');
+      intl.setLocale(locale);
+    }
+  },
+
   _cleanUpAndTransition() {
     $('.modal').modal('hide');
     this.transitionTo('application');
