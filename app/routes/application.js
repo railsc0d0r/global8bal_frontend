@@ -19,7 +19,8 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   },
 
   beforeModel() {
-    this.get('intl').setLocale('en');
+    const intl = this.get('intl');
+    intl.setLocale('en');
   },
 
   afterModel() {
