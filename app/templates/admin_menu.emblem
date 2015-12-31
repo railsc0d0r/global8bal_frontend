@@ -1,8 +1,8 @@
 #admin_menu.dropdown.btn-group
   a.btn.btn-default.dropdown-toggle href="#" id="toggle_admin_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-    | Administration
+    = t 'navigation.administration'
     span.caret
   ul.dropdown-menu.dropdown-menu-left aria-labelledby="toggle_admin_menu"
     li
       = link-to 'employees'
-        | Employees
+        = t 'employee.model_name.plural'

@@ -17,8 +17,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
               = partial "admin_menu"
             div.btn.btn-default
               = currentUser.email
-            a href="#" class="btn btn-default" click='invalidateSession' LOGOUT
+            a href="#" class="btn btn-default" click='invalidateSession'
+              = t 'navigation.logout'
           else
             = link-to 'login' class="btn btn-default"
-              | LOGIN
+              = t 'navigation.login'
           = partial "language_menu"
