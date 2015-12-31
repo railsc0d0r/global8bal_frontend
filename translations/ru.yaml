@@ -1,1 +1,22 @@
-hello: 'world'
+navigation:
+  login: 'логин'
+  logout: 'выйти'
+  brand: 'global8ball.com'
+  administration: 'администрация'
+employee:
+  model_name: 'служащий'
+user:
+  password: 'пароль'
+  password_confirmation: 'подтверждение пароля'
+person:
+  firstname: 'имя'
+  lastname: 'фамилия'
+  email: 'е-мейл'
+address:
+  model_name: 'адрес'
+  street: 'улица'
+  street2: 'дополнительная информация'
+  zip: 'почтовый индекс'
+  city: 'город'
+country:
+  model_name: 'страна'
