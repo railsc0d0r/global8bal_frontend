@@ -5,6 +5,9 @@ navigation:
   administration: 'администрация'
 employee:
   model_name: 'служащий'
+  model_name:
+    singular: 'служащий'
+    plural: 'служащих'
 user:
   password: 'пароль'
   password_confirmation: 'подтверждение пароля'

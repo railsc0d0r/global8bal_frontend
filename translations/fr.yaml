@@ -4,7 +4,9 @@ navigation:
   brand: 'global8ball.com'
   administration: 'administration'
 employee:
-  model_name: 'employé'
+  model_name:
+    singular: 'employé'
+    plural: 'employés'
 user:
   password: 'mot de passe'
   password_confirmation: 'confirmation du mot de passe'
