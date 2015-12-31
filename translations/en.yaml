@@ -5,11 +5,13 @@ navigation:
   administration: 'Administration'
 employee:
   name: 'employee'
+user:
+  password: 'password'
+  password_confirmation: 'password confirmation'
+person:
   firstname: 'firstname'
   lastname: 'lastname'
   email: 'email'
-  password: 'password'
-  password_confirmation: 'password confirmation'
 address:
   name: 'address'
   street: 'street'
