@@ -1,8 +1,9 @@
 .language_menu.dropdown.btn-group
   a.btn.btn-default.dropdown-toggle href="#" id="toggle_language_selection" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-    = currentLanguage
+    img src="#{flag_asset_url currentLanguage}" alt="#{currentLanguage}" class="flag_icon"
     span.caret
   ul.dropdown-menu.dropdown-menu-right aria-labelledby="toggle_language_selection"
     each languages as |language|
       li
-        a href="#" click="'setLocale' language" = language
+        a href="#" click="'setLocale' language"
+          img src="#{flag_asset_url language}" alt="#{language}" class="flag_icon"
