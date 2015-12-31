@@ -1,8 +1,11 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+import Settings from 'frontend/models/local-settings';
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
   intl: Ember.inject.service(),
+  localSettings: Settings.create(),
+
   init: function() {
     const _this = this;
 
@@ -19,8 +22,14 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   },
 
   beforeModel() {
-    const intl = this.get('intl');
-    intl.setLocale('en');
+    let intl = this.get('intl');
+    let currentLocale = this.get('localSettings.locale');
+
+    if (currentLocale) {
+      intl.setLocale(currentLocale);
+    } else {
+      intl.setLocale('en');
+    }
   },
 
   afterModel() {
@@ -34,8 +43,10 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
 
   actions: {
     setLocale(locale) {
-      const intl = this.get('intl');
+      let intl = this.get('intl');
+      let localSettings = this.get('localSettings');
       intl.setLocale(locale);
+      localSettings.set('locale', locale);
     }
   },
 
