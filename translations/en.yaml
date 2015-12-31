@@ -4,7 +4,7 @@ navigation:
   brand: 'global8ball.com'
   administration: 'Administration'
 employee:
-  name: 'employee'
+  model_name: 'employee'
 user:
   password: 'password'
   password_confirmation: 'password confirmation'
@@ -13,10 +13,10 @@ person:
   lastname: 'lastname'
   email: 'email'
 address:
-  name: 'address'
+  model_name: 'address'
   street: 'street'
   street2: 'additional information'
   zip: 'zip-code'
   city: 'city'
 country:
-  name: 'country'
+  model_name: 'country'
