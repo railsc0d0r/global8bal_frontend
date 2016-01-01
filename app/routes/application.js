@@ -9,7 +9,6 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   init: function() {
     const _this = this;
 
-    this._initializeLocalization();
     this._populateCurrentCountries();
 
     this.get('session').on('authenticationSucceeded', function() {
@@ -62,17 +61,6 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   _getUserIdFromSession() {
     const user_id = this.get('session.session.content.authenticated.user_id');
     return user_id;
-  },
-
-  _initializeLocalization() {
-    let intl = this.get('intl');
-    let currentLocale = this.get('localSettings.locale');
-
-    if (currentLocale) {
-      intl.setLocale(currentLocale);
-    } else {
-      intl.setLocale('en');
-    }
   }
 
 });
