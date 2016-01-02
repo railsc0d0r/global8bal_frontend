@@ -32,9 +32,8 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
   actions: {
     setLocale(locale) {
       let localSettings = this.get('localSettings');
-      I18n.locale = locale;
+      Ember.set('I18n.locale', locale);
       localSettings.set('locale', locale);
-      window.location.reload();
     }
   },
 
