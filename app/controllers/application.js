@@ -2,14 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
-  intl: Ember.inject.service(),
 
-  currentLanguage: Ember.computed('intl.locale', function() {
-    return this.get('intl').get('locale').shift();
+  currentLanguage: Ember.computed(I18n.locale, function() {
+    return I18n.locale;
   }),
 
   languages: Ember.computed(function() {
-    return this.get('intl').getLocalesByTranslations();
+    return _.keys(I18n.translations);
   }),
 
   actions: {
