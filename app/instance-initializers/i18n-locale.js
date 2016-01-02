@@ -7,7 +7,7 @@ export function initialize(application) {
   let currentLocale;
   typeof(locale) === 'undefined' ? currentLocale = 'en' : currentLocale = locale;
 
-  console.log(I18n);
+  I18n.locale = currentLocale;
 }
 
 export default {
