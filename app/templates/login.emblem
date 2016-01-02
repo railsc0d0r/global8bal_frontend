@@ -17,4 +17,4 @@
     br
     .row
       .input-group	
-        input type='submit' value='#{i18n_t 'navigation.login'}'
+        input type='submit' value='#{i18n_t 'form.submit'}'
