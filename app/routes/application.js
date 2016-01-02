@@ -3,7 +3,6 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 import Settings from 'frontend/models/local-settings';
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
-  intl: Ember.inject.service(),
   localSettings: Settings.create(),
 
   init: function() {
@@ -32,9 +31,8 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
 
   actions: {
     setLocale(locale) {
-      let intl = this.get('intl');
       let localSettings = this.get('localSettings');
-      intl.setLocale(locale);
+      I18n.locale = locale;
       localSettings.set('locale', locale);
     }
   },
