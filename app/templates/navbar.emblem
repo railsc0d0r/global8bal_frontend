@@ -18,8 +18,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top
             div.btn.btn-default
               = currentUser.email
             a href="#" class="btn btn-default" click='invalidateSession'
-              = t 'navigation.logout'
+              = i18n_t 'navigation.logout'
           else
             = link-to 'login' class="btn btn-default"
-              = t 'navigation.login'
+              = i18n_t 'navigation.login'
           = partial "language_menu"
