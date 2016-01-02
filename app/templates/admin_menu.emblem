@@ -5,4 +5,4 @@
   ul.dropdown-menu.dropdown-menu-left aria-labelledby="toggle_admin_menu"
     li
       = link-to 'employees'
-        = i18n_t 'employee.model_name.plural'
+        = i18n_t 'activerecord.models.employee' count=2
