@@ -6,13 +6,14 @@ Router = Ember.Router.extend
 
 Router.map -> 
 
-  @resource 'sections', ->
-    @route('new')
-    return
-  @resource 'section', path: 'sections/:section_id', ->
-    @route('edit')
-    @route('delete')
-    return
+  @route 'index', path: '/', ->
+    @resource 'sections', ->
+      @route('new')
+      return
+    @resource 'section', path: 'sections/:section_id', ->
+      @route('edit')
+      @route('delete')
+      return
   @route 'login'
   @route 'signup'
   @route 'users', -> 
