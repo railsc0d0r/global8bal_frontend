@@ -15,4 +15,7 @@ div class="jumbotron logos"
         a href="http://eurotouronline.com/" target="_blank"
           img.logo src="#{rails_asset_url 'ibpf.png'}" alt="IPBF Logo" height="50%" width="50%"
 div class="container content"
-  | started
+  each model as |section|
+    | Here goes the section
+  else
+    = i18n_t 'content.no_object' name=(i18n_t 'activerecord.models.section' count=2)
