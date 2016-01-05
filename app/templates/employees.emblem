@@ -15,14 +15,14 @@
         .row
           .col-md-6
             .row  
-              | Name: #{employee.firstname} #{employee.lastname}
+              | #{i18n_t 'activerecord.attributes.person.name'}: #{employee.firstname} #{employee.lastname}
             .row
-              | Role: #{employee.role_name}
+              | #{i18n_t 'activerecord.models.role' count=1}: #{employee.role_name}
             .row
-              | Email: #{employee.email}
+              | #{i18n_t 'activerecord.attributes.person.email'}: #{employee.email}
           .col-md-6
             .col-md-2
-              | Address:
+              | #{i18n_t 'activerecord.models.address' count=1}:
             .col-md-4
               .row
                 | #{employee.street}

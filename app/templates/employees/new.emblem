@@ -8,59 +8,59 @@
     .row
       .input-group
         label.input-group-addon for='role_name'
-          | Role:
-        = view 'select' id='role' content=currentRoles optionLabelPath="content.name" optionValuePath="content.name" prompt='Select Role' selection=role class='form-control'
+          | #{i18n_t 'activerecord.models.role' count=1}:
+        = view 'select' id='role' content=currentRoles optionLabelPath="content.name" optionValuePath="content.name" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.models.role' count=1)) selection=role class='form-control'
     .row
       .input-group
         label.input-group-addon for='password'
-          | Password:
-        = input id='password' type="password" placeholder='Enter Password' value=password class='form-control'
+          | #{i18n_t 'activerecord.attributes.user.password'}:
+        = input id='password' type="password" placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.user.password')) value=password class='form-control'
     .row
       .input-group
         label.input-group-addon for='password_confirmation'
-          | Confirm Password:
-        = input id='password_confirmation' type="password" placeholder='Confirm Password' value=password_confirmation class='form-control'
+          | #{i18n_t 'activerecord.attributes.user.password_confirmation'}:
+        = input id='password_confirmation' type="password" placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.user.password_confirmation')) value=password_confirmation class='form-control'
     .row
       .input-group
         label.input-group-addon for='firstname'
-          | Firstname:
-        = input id='firstname' placeholder='Enter Firstname' value=firstname class='form-control'
+          | #{i18n_t 'activerecord.attributes.person.firstname'}:
+        = input id='firstname' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.firstname')) value=firstname class='form-control'
     .row
       .input-group
         label.input-group-addon for='lastname'
-          | Lastname:
-        = input id='lastname' placeholder='Enter Lastname' value=lastname class='form-control'
+          | #{i18n_t 'activerecord.attributes.person.lastname'}:
+        = input id='lastname' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.lastname')) value=lastname class='form-control'
     .row
       .input-group
         label.input-group-addon for='email'
-          | Email:
-        = input id='email' placeholder='Enter Email' value=email class='form-control'
+          | #{i18n_t 'activerecord.attributes.person.email'}:
+        = input id='email' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.email')) value=email class='form-control'
     .row
       .input-group
         label.input-group-addon for='street'
-          | Street:
-        = input id='street' placeholder='Enter Street' value=street class='form-control'
+          | #{i18n_t 'activerecord.attributes.address.street'}:
+        = input id='street' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.address.street')) value=street class='form-control'
     .row
       .input-group
         label.input-group-addon for='street2'
           | 
-        = input id='street2' placeholder='Enter additional information' value=street2 class='form-control'
+        = input id='street2' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.address.street2')) value=street2 class='form-control'
     .row
       .input-group
         label.input-group-addon for='zip'
-          | Zipcode:
-        = input id='zip' placeholder='Enter Zipcode' value=zip class='form-control'
+          | #{i18n_t 'activerecord.attributes.address.zip'}:
+        = input id='zip' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.address.zip')) value=zip class='form-control'
     .row
       .input-group
         label.input-group-addon for='city'
-          | City:
-        = input id='city' placeholder='Enter City' value=city class='form-control'
+          | #{i18n_t 'activerecord.attributes.address.city'}:
+        = input id='city' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.address.city')) value=city class='form-control'
     .row
       .input-group
         label.input-group-addon for='country'
-          | Country:
-        = view 'select' id='country' content=currentCountries optionLabelPath="content.name" optionValuePath="content.id" prompt='Select Country' selection=country class='form-control'
+          | #{i18n_t 'activerecord.models.country' count=1}:
+        = view 'select' id='country' content=currentCountries optionLabelPath="content.name" optionValuePath="content.id" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.models.country' count=1)) selection=country class='form-control'
     br
     .row
       .input-group	
-        input.btn.btn-default type='submit' value='Save'
+        input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
