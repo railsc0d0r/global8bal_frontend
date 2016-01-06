@@ -1,1 +1,22 @@
-= outlet
+.container
+  .content style="margin-top: 3vh;"
+    if errorMessage
+      #errorMessage
+        | Creating section failed:
+        br
+        = errorMessage
+    form submit='createSection'
+      .row
+        .input-group
+          label.input-group-addon for='headline'
+            | Headline:
+          = input id='headline' placeholder=(i18n_t 'form.enter_attribute' name='Headline') value=headline class='form-control'
+      .row
+        .input-group
+          label.input-group-addon for='content'
+            | Content:
+          = tinymce-text-area rows='20' id='content' placeholder=(i18n_t 'form.enter_attribute' name='Content') value=content class='form-control'
+      br
+      .row
+        .input-group
+          input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
