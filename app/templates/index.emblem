@@ -15,6 +15,11 @@ div class="jumbotron logos"
         a href="http://eurotouronline.com/" target="_blank"
           img.logo src="#{rails_asset_url 'ibpf.png'}" alt="IPBF Logo" height="50%" width="50%"
 div class="container content"
+  if currentUser.is_editor
+    .row
+      .add_link
+        = link-to 'sections.new' currentPath
+          img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"
   each model as |section|
     | Here goes the section
   else
