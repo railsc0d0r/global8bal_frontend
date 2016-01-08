@@ -6,6 +6,7 @@ IndexRoute = Ember.Route.extend(
 
   setupController: (controller, model) ->
         controller.set('currentPath', this.routeName)
+        controller.set('model', model)
 
   renderTemplate: ->
         this.render(outlet: 'index')
