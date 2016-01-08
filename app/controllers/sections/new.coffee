@@ -14,21 +14,25 @@ SectionsNewController = Ember.Controller.extend(
         content_attributes = {headline: headline, content: content, language: language}
         contentObj = this.store.createRecord('content', content_attributes)
 
-        section_attributes = {path: path, contents: [contentObj]}
+        section_attributes = {path: path}
         section = this.store.createRecord('section', section_attributes)
+
+        section.get('contents').then((contents) -> contents.pushObject(contentObj))
 
         that = this
         section.save().then(() ->
+                contentObj.save()
                 that._close()
                 that.transitionToRoute(path)
                 console.log('Section created.')
                 that.controllerFor('messages').send('successfullyCreated', "Section on '" + section.get('path') + "'")
         ).catch((error) ->
+                console.log(error)
                 errorMessage = that.get('errorHandler').joinErrorMessages(error.errors)
                 that.set('errorMessage', errorMessage)
                 console.log("Section couldn't be created:" + errorMessage)
-                content.transitionTo('created.uncommitted')
-                content.deleteRecord()
+                contentObj.transitionTo('created.uncommitted')
+                contentObj.deleteRecord()
                 section.transitionTo('created.uncommitted')
                 section.deleteRecord()
                 return
@@ -38,12 +42,9 @@ SectionsNewController = Ember.Controller.extend(
         this._close()
 
   _close: () ->
-            this.set('headline', null)
-            this.set('content', null)
-            this.set('language', null)
             this.set('errorMessage', null)
 
-            this.transitionToRoute(path)
+            this.transitionToRoute(this.get('path'))
 )
 
 `export default SectionsNewController`
