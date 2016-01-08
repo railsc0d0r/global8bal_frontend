@@ -21,6 +21,14 @@ div class="container content"
         = link-to 'sections.new' currentPath
           img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"
   each model as |section|
-    | Here goes the section
+    if section.currentContent
+      h3 style="text-align: left;"
+        | #{section.currentContent.headline}
+      p
+        == section.currentContent.content
+    else
+      p
+        | Content not translated yet
+    br
   else
     = i18n_t 'content.no_object' name=(i18n_t 'activerecord.models.section' count=2)
