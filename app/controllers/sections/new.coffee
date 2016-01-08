@@ -25,7 +25,7 @@ SectionsNewController = Ember.Controller.extend(
                 that._close()
                 that.transitionToRoute(path)
                 console.log('Section created.')
-                that.controllerFor('messages').send('successfullyCreated', "Section on '" + section.get('path') + "'")
+                that.controllerFor('messages').send('successfullyCreated', "Section and content on '" + section.get('path') + "'")
         ).catch((error) ->
                 console.log(error)
                 errorMessage = that.get('errorHandler').joinErrorMessages(error.errors)
