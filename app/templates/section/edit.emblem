@@ -1,1 +1,27 @@
-= outlet
+.container
+  .content style="margin-top: 3vh;"
+    if errorMessage
+      #errorMessage
+        | Creating section failed:
+        br
+        = errorMessage
+    form submit='updateSection'
+      .row
+        .input-group
+          label.input-group-addon for='headline'
+            | #{i18n_t 'activerecord.attributes.content.headline'}:
+          = input id='headline' placeholder=(i18n_t 'form.enter_attribute' name='Headline') valueBinding=model.currentContent.headline class='form-control'
+      .row
+        .input-group
+          label.input-group-addon for='content'
+            | #{i18n_t 'activerecord.attributes.content.content'}:
+          = tinymce-text-area rows='20' id='content' valueBinding=model.currentContent.content class='form-control'
+      br
+      .row
+        .input-group
+          input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
+      br
+      h3 style="text-align: left;"
+        = model.currentContent.headline
+      p
+        == model.currentContent.content
