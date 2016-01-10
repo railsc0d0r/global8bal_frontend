@@ -9,7 +9,6 @@ Section = DS.Model.extend {
 
           if typeof(content) == 'undefined'
             objName = I18n.t('activerecord.models.section', count: 1)
-            console.log(objName)
             content = this.store.createRecord('content', language: I18n.locale, content: I18n.t('content.not_translated', name: objName))
             this.get('contents').then((contents) -> contents.pushObject(content))
 
