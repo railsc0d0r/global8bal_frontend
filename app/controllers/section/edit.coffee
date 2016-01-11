@@ -5,15 +5,16 @@ SectionEditController = Ember.Controller.extend(
 
   actions:
     updateSection: () ->
+        path = this.get('model.path')
         contentObj = this.get('model.currentContent')
 
         that = this
         contentObj.save().then(() ->
           that._close()
-          that.transitionToRoute(section.get('path'))
+          that.transitionToRoute(path)
           console.log('Content for section updated.')
-          that.controllerFor('messages').send('successfullyUpdated', "Content on '" + section.get('path') + "'")
-        ).catch(() ->
+          that.controllerFor('messages').send('successfullyUpdated', "Content on '" + path + "'")
+        ).catch((error) ->
           errorMessage = that.get('errorHandler').joinErrorMessages(error.errors)
           that.set('errorMessage', errorMessage)
           console.log("Content for section couldn't be updated:" + errorMessage)
