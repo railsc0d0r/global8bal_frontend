@@ -14,24 +14,4 @@ div class="jumbotron logos"
       .col-md-4.logo
         a href="http://eurotouronline.com/" target="_blank"
           img.logo src="#{rails_asset_url 'ibpf.png'}" alt="IPBF Logo" height="50%" width="50%"
-div class="container content"
-  if currentUser.is_editor
-    .row
-      .add_link
-        = link-to 'sections.new' currentPath
-          img src="#{rails_asset_url 'icons/add_icon.svg'}" alt="Add" class="app_icon"
-  each model as |section|
-    if currentUser.is_editor
-      .row
-        div style="float: right; clear: both;"
-          = link-to 'section.edit' section
-            img src="#{rails_asset_url 'icons/edit_icon.svg'}" alt='Edit' class='app_icon'
-          = link-to 'section.delete' section
-            img src="#{rails_asset_url 'icons/delete_icon.svg'}" alt='Delete' class='app_icon'
-    h3 style="text-align: left;"
-      = section.currentContent.headline
-    p
-      == section.currentContent.content
-    br
-  else
-    = i18n_t 'content.no_object' name=(i18n_t 'activerecord.models.section' count=2)
+= partial 'sections_partial'
