@@ -5,8 +5,7 @@ SectionEditController = Ember.Controller.extend(
 
   actions:
     updateSection: () ->
-        section = this.get('model')
-        contentObj = section.get('currentContent')
+        contentObj = this.get('model.currentContent')
 
         that = this
         contentObj.save().then(() ->
