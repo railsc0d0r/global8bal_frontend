@@ -8,4 +8,7 @@ footer
     a href="http://3trip.de/" target="_blank"
       ' © 3trip.de |
     a href="https://www.facebook.com/Global8Ball" target="_blank"
-      img src="#{rails_asset_url 'fb_button.png'}" alt="Find us on Facebook" height="16px" width="16px"
+      img src="#{rails_asset_url 'fb_button.png'}" alt="Find us on Facebook" height="16px" width="16px" style="margin-right: 5px;"
+      ' |
+    = link-to 'faq'
+      | FAQ
