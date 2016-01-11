@@ -29,6 +29,8 @@ Router.map ->
       @route 'delete'
     return
   @route 'faq'
+  @route 'about_us'
+  @route 'the_game'
   return
 
 `export default Router`

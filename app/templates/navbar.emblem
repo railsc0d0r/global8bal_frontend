@@ -12,11 +12,15 @@ nav.navbar.navbar-inverse.navbar-fixed-top
     #navbar.navbar-collapse.collapse
       .navbar-form.navbar-right
         .btn-group
+          div.btn.btn-default
+            = link-to 'about_us'
+              | About Us
+          div.btn.btn-default
+            = link-to 'the_game'
+              | The Game
           if session.isAuthenticated
             if currentUser.is_admin
               = partial "admin_menu"
-            div.btn.btn-default
-              = currentUser.email
             a href="#" class="btn btn-default" click='invalidateSession'
               = i18n_t 'navigation.logout'
           else
