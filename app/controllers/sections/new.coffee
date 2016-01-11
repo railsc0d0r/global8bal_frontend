@@ -43,6 +43,8 @@ SectionsNewController = Ember.Controller.extend(
 
   _close: () ->
             this.set('errorMessage', null)
+            this.set('headline', '')
+            this.set('content', '')
 
             this.transitionToRoute(this.get('path'))
 )
