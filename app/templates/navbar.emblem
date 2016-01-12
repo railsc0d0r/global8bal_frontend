@@ -18,6 +18,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           div.btn.btn-default
             = link-to 'the_game'
               | The Game
+          div.btn.btn-default
+            = link-to 'faq'
+              | FAQ
           if session.isAuthenticated
             if currentUser.is_admin
               = partial "admin_menu"
