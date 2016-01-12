@@ -15,6 +15,7 @@ SectionEditController = Ember.Controller.extend(
           console.log('Content for section updated.')
           that.controllerFor('messages').send('successfullyUpdated', "Content on '" + path + "'")
         ).catch((error) ->
+          console.log(error)
           errorMessage = that.get('errorHandler').joinErrorMessages(error.errors)
           that.set('errorMessage', errorMessage)
           console.log("Content for section couldn't be updated:" + errorMessage)
