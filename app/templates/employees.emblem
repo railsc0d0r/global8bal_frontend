@@ -17,6 +17,8 @@
             .row  
               | #{i18n_t 'activerecord.attributes.person.name'}: #{employee.firstname} #{employee.lastname}
             .row
+              | #{i18n_t 'activerecord.attributes.user.login'}: #{employee.username}
+            .row
               | #{i18n_t 'activerecord.models.role' count=1}: #{employee.role_name}
             .row
               | #{i18n_t 'activerecord.attributes.person.email'}: #{employee.email}
