@@ -48,7 +48,7 @@ label {
 /* ============================================================
   Container-classes
 ============================================================ */
-.logos {
+.logos, .headline {
   background-image: radial-gradient(#FAE672, #867724);
   min-height: 100vh;
   text-align: center;
@@ -58,7 +58,7 @@ label {
 }
 .content {
   min-height: 85vh;
-  padding-top: 8vh;
+  padding-top: 50px;;
 }
 .content h1,h2,h3 {
   text-align: center;
@@ -119,4 +119,27 @@ img.flag_icon {
     color: #543232;
     border: 1px solid #543232;
     padding: 0.5vh 0.5vw;
+}
+/* ============================================================
+  Parallax effect
+============================================================ */
+.parallax {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+}
+.parallax_content {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+.parallax h1,h2,h3 {
+  color: #4e4e4e;
+  line-height: 1;
+  font-weight: 700;
+  text-shadow: 0 0 10px white;
 }
