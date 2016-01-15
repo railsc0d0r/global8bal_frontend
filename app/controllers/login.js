@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
     },
     close() {
       $('.modal').modal('hide');
-      this.set('errorMessage', null)
+      this.set('errorMessage', null);
       this.transitionToRoute('application');
     }
   }
