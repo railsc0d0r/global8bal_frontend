@@ -13,6 +13,9 @@ each model as |section|
             img src="#{rails_asset_url 'icons/edit_icon.svg'}" alt='Edit' class='app_icon'
           = link-to 'section.delete' section
             img src="#{rails_asset_url 'icons/delete_icon.svg'}" alt='Delete' class='app_icon'
+          if section.currentContent.headline
+            = link-to 'section.upload-background' section
+              img src="#{rails_asset_url 'icons/upload_icon.svg'}" alt='Upload' class='app_icon'
     .row
       p
         == section.currentContent.content
