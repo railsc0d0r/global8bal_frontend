@@ -10,6 +10,7 @@ Router.map ->
     @route 'new', path: 'sections/new/:path'
     return
   @resource 'section', path: 'sections/:section_id', ->
+    @route 'upload-background'
     @route 'edit'
     @route 'delete'
     return
