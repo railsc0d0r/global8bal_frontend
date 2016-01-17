@@ -21,7 +21,3 @@
         .input-group
           input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
       br
-      h3 style="text-align: left;"
-        = model.currentContent.headline
-      p
-        == model.currentContent.content

@@ -1,1 +1,10 @@
-= outlet
+= modal-dialog closeDialogAction="close"
+  if errorMessage
+    #errorMessage
+      | Uploading an image failed:
+      br
+      = errorMessage
+  form submit='uploadBackgroundImage'
+    .row
+      .input-group
+        input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"

@@ -1,0 +1,14 @@
+div style="margin-top: 50px;"
+
+= outlet
+
+if model.currentContent.headline
+  div.jumbotron.headline.parallax
+    span.parallax_content
+      h1
+        = model.currentContent.headline
+div.container.content
+  .row
+    p
+      == model.currentContent.content
+  br
