@@ -1,10 +1,16 @@
 div style="margin-top: 50px;"
 each model as |section|
   if section.currentContent.headline
-    div.jumbotron.headline.parallax
-      span.parallax_content
-        h1
-          = section.currentContent.headline
+    if section.background
+      div.jumbotron.headline.parallax style="background-image: url('#{section.background}');"
+        span.parallax_content
+          h1
+            = section.currentContent.headline
+    else
+      div.jumbotron.headline.parallax
+        span.parallax_content
+          h1
+            = section.currentContent.headline
   div.container.content
     if currentUser.is_editor
       .row
