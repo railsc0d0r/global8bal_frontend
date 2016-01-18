@@ -17,6 +17,9 @@ MessagesController = Ember.Controller.extend(
     successfullyDeleted: (object_name) ->
       this._showMessage(object_name + " successfully deleted.")
 
+    successfullyUploaded: (object_name) ->
+      this._showMessage(object_name + " successfully uploaded.")
+
     deleteFailed: (errorMessage) ->
       this._showError("Delete failed: " + errorMessage)
 
