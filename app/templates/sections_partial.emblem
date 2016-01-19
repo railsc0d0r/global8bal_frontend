@@ -1,4 +1,3 @@
-div style="margin-top: 50px;"
 each model as |section|
   if section.currentContent.headline
     if section.background
@@ -11,6 +10,8 @@ each model as |section|
         span.parallax_content
           h1
             = section.currentContent.headline
+  else
+    div style="margin-top: 30px;"
   div.container.content
     if currentUser.is_editor
       .row
@@ -27,6 +28,7 @@ each model as |section|
         == section.currentContent.content
     br
 else
+  div style="margin-top: 30px;"
   div.container.content
     = i18n_t 'content.no_object' name=(i18n_t 'activerecord.models.section' count=2)
 if currentUser.is_editor
