@@ -8,7 +8,11 @@
     .row
       label for='file'
         | Choose your picture:
+      br
+    .row
       = file-picker class="background" fileLoaded="fileLoaded" readAs="readAsDataURL" hideFileInput=false selectOnClick=false dropzone=false
+    .row
+      br
     .row
       .input-group
         input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
