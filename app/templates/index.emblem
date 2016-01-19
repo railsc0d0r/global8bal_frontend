@@ -1,4 +1,4 @@
-div.jumbotron.logos.parallax
+div.jumbotron.logos
   div class="container"
     .row
       img.our_logo src="#{rails_asset_url 'logo.png'}" alt="our Logo" height="55%" width="55%"
