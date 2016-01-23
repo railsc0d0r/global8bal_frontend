@@ -1,0 +1,29 @@
+#Imprint.modal.fade" role="dialog"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close type="button" data-dismiss="modal"
+          img src="#{rails_asset_url('icons/close_icon.svg')}" alt="Close"
+      .modal-body
+        .row
+          h3 style="text-align: left;"
+            = i18n_t('imprint.owner_of_website')
+        .row
+          | 3trip
+        .row
+          | Mike Neubert
+        .row
+          | Im Schlattgarten 13
+        .row
+        .row
+          | D-79589 Binzen
+        .row
+          | Tel.: +49 (0) 7621/ 58 694 68
+        .row
+          | Steuer Nr.: 11057 / 06752
+        .row
+          | Amtsgericht Lörrach
+        .row
+          h4
+            = i18n_t('imprint.responsible_for_content')
+            | 3trip.de, Mike Neubert
