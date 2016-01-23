@@ -14,4 +14,4 @@ div.jumbotron.logos
       .col-md-4.logo
         a href="http://eurotouronline.com/" target="_blank"
           img.logo src="#{rails_asset_url 'ibpf.png'}" alt="IPBF Logo" height="50%" width="50%"
-= partial 'sections_partial'
+= partial '_sections'
