@@ -11,4 +11,7 @@ footer
       img src="#{rails_asset_url 'fb_button.png'}" alt="Find us on Facebook" height="16px" width="16px" style="margin-right: 5px;"
       ' |
     = link-to 'terms_of_use'
-      | Terms of Use
+      ' Terms of Use |
+    a href="#" data-toggle="modal" data-target="#imprint"
+      = i18n_t 'imprint.headline'
+= partial '_imprint'

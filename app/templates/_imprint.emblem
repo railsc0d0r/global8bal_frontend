@@ -1,13 +1,13 @@
-#Imprint.modal.fade" role="dialog"
+#imprint.modal.fade role="dialog"
   .modal-dialog
     .modal-content
       .modal-header
         button.close type="button" data-dismiss="modal"
-          img src="#{rails_asset_url('icons/close_icon.svg')}" alt="Close"
+          img class="app_icon" src="#{rails_asset_url 'icons/close_icon.svg'}" alt="Close"
       .modal-body
         .row
           h3 style="text-align: left;"
-            = i18n_t('imprint.owner_of_website')
+            = i18n_t 'imprint.owner_of_website'
         .row
           | 3trip
         .row
@@ -25,5 +25,5 @@
           | Amtsgericht Lörrach
         .row
           h4
-            = i18n_t('imprint.responsible_for_content')
+            = i18n_t 'imprint.responsible_for_content'
             | 3trip.de, Mike Neubert
