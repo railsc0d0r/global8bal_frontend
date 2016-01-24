@@ -23,10 +23,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top
               | FAQ
           if session.isAuthenticated
             if currentUser.is_admin
-              = partial "admin_menu"
+              = partial "_admin_menu"
             a href="#" class="btn btn-default" click='invalidateSession'
               = i18n_t 'navigation.logout'
           else
             = link-to 'login' class="btn btn-default"
               = i18n_t 'navigation.login'
-          = partial "language_menu"
+          = partial "_language_menu"

@@ -1,4 +1,4 @@
-= partial "navbar"
+= partial "_navbar"
 = outlet "index"
 = outlet "modal"
 
