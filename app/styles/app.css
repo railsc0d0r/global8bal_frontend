@@ -2,9 +2,10 @@
   Standard elements
 ============================================================ */
 body {
-  background-image: linear-gradient(#eee, #ddd);
+  background-image: linear-gradient(#fefefe, #eee);
   color: #222;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 16px;
 }
 hr {
   border-color: #222;
