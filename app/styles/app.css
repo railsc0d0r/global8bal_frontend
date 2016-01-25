@@ -132,6 +132,7 @@ img.flag_icon {
   min-height: 100vh;
   line-height: 100vh;
   text-align: center;
+  box-shadow: inset 0 0 0 1000px rgba(240,240,252,.5);
 }
 .parallax_content {
     display: inline-block;
