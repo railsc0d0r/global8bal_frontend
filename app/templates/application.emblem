@@ -12,6 +12,8 @@ footer
       ' |
     = link-to 'terms_of_use'
       ' Terms of Use |
+    = link-to 'rules'
+      ' Rules |
     a href="#" data-toggle="modal" data-target="#imprint"
       = i18n_t 'imprint.headline'
 = partial '_imprint'
