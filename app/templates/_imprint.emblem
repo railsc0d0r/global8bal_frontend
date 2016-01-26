@@ -12,7 +12,7 @@
             | #{i18n_t 'imprint.owner_of_website'}:
         br
         .row
-          | 3trip
+          | 3trip e.K.
         .row
           | Mike Neubert
         .row
@@ -26,10 +26,11 @@
         br
         .row
           | Steuer Nr.: 11057 / 06752
+        .row
+          | USt. ID: DE294764544
         br
         .row
-          | Amtsgericht Lörrach
-        br
+          | HRA 704341, Amtsgericht Lörrach
         br
         .row
           h4
