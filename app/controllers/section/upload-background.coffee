@@ -16,11 +16,13 @@ SectionUploadBackgroundController = Ember.Controller.extend(
         if background
           section.set('background', background)
           that = this
-          section.save().then(
-            that._close()
-            that.transitionToRoute(section.get('path'))
-            console.log('Backgroundimage for section uploaded.')
-            that.controllerFor('messages').send('successfullyUploaded', "Backgroundimage")
+          section.save().then(() ->
+                section.reload().then(() ->
+                  that._close()
+                  that.transitionToRoute(section.get('path'))
+                  console.log('Backgroundimage for section uploaded.')
+                  that.controllerFor('messages').send('successfullyUploaded', "Backgroundimage")
+                )
           ).catch((error) ->
                 errorMessage = that.get('errorHandler').joinErrorMessages(error.errors)
                 that.set('errorMessage', errorMessage)
