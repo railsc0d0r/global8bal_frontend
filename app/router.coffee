@@ -34,6 +34,7 @@ Router.map ->
   @route 'the_game'
   @route 'terms_of_use'
   @route 'rules'
+  @route 'privacy'
   return
 
 `export default Router`
