@@ -52,7 +52,8 @@ label {
   Standard bootstrap-classes
 ============================================================ */
 .navbar {
-  color: #eee;
+    color: #eee;
+    position: absolute;
 }
 .row {
   margin: 0px;
@@ -147,6 +148,9 @@ img.flag_icon {
     border: 1px solid #543232;
     padding: 0.5vh 0.5vw;
 }
+#language_selection {
+    width: 60px;
+}
 /* ============================================================
   Parallax effect
 ============================================================ */
@@ -178,4 +182,43 @@ img.flag_icon {
   width: 100%;
   height: 100%;
   padding: 3vh 0;
+}
+/* ============================================================
+  define media-queries
+============================================================ */
+@media (max-width: 767px) {
+    .navbar-collapse {
+	min-height: 100vh;
+	overflow-x: auto;
+    }
+    .btn {
+	font-size: 14px;
+	padding: 3px 8px;
+    }
+    img.app_icon {
+	width: 4vw;
+	height: 4vw;
+    }
+    img.flag_icon {
+	width: 13px;
+	height: 13px;
+    }
+}
+@media (max-width: 359px) {
+    .navbar-collapse {
+	min-height: 100vh;
+	overflow-x: auto;
+    }
+    .btn {
+	font-size: 11px;
+	padding: 3px 8px;
+    }
+    img.app_icon {
+	width: 4vw;
+	height: 4vw;
+    }
+    img.flag_icon {
+	width: 10px;
+	height: 10px;
+    }
 }
