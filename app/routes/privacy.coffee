@@ -9,7 +9,9 @@ PrivacyRoute = Ember.Route.extend(
         controller.set('model', model)
 
   renderTemplate: ->
-        this.render(outlet: 'index')
+        this.render('content', {
+          outlet: 'index'
+        })
 )
 
 `export default PrivacyRoute`
