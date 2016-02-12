@@ -16,6 +16,14 @@ footer
     .col-md-2
       ul
         li
+          = link-to 'partner'
+            | Partner
+        li
+          = link-to 'press'
+            | Press
+    .col-md-2
+      ul
+        li
           = link-to 'terms_of_use'
             | Terms of Use
         li
@@ -27,13 +35,5 @@ footer
         li
           a href="#" data-toggle="modal" data-target="#imprint"
             = i18n_t 'imprint.headline'
-    .col-md-2
-      ul
-        li
-          = link-to 'partner'
-            | Partner
-        li
-          = link-to 'press'
-            | Press
 
 = partial '_imprint'
