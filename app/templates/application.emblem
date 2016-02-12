@@ -4,18 +4,28 @@
 
 footer
   .container
-    hr
-    a href="http://3trip.de/" target="_blank"
-      ' © 3trip.de |
-    a href="https://www.facebook.com/Global8Ball" target="_blank"
-      img src="#{rails_asset_url 'fb_button.png'}" alt="Find us on Facebook" height="16px" width="16px" style="margin-right: 5px;"
-      ' |
-    = link-to 'terms_of_use'
-      ' Terms of Use |
-    = link-to 'rules'
-      ' Rules |
-    = link-to 'privacy'
-      ' Privacy Policy |
-    a href="#" data-toggle="modal" data-target="#imprint"
-      = i18n_t 'imprint.headline'
+    .col-md-2
+      ul
+        li
+          a href="http://3trip.de/" target="_blank"
+            | © 3trip.de
+        li
+          a href="https://www.facebook.com/Global8Ball" target="_blank"
+            img src="#{rails_asset_url 'fb_button.png'}" alt="Find us on Facebook" height="16px" width="16px" style="margin-right: 5px;"
+            | Facebook
+    .col-md-2
+      ul
+        li
+          = link-to 'terms_of_use'
+            | Terms of Use
+        li
+          = link-to 'rules'
+            | Rules
+        li
+          = link-to 'privacy'
+            | Privacy Policy
+        li
+          a href="#" data-toggle="modal" data-target="#imprint"
+            = i18n_t 'imprint.headline'
+
 = partial '_imprint'
