@@ -7,6 +7,11 @@ body {
   font-family: 'Oxygen', sans-serif;
   font-size: 18px;
 }
+ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
 hr {
   border-color: #222;
 }
@@ -27,9 +32,18 @@ a.active:hover {
   color: #b8b7ee;
 }
 footer {
-  margin-bottom: 2vh;
   min-height: 5vh;  
-  padding: 0 15px;
+  padding: 15px 0;
+  background-image: linear-gradient(#222, #333);
+  color: #fefefe;
+}
+footer a {
+    text-decoration: none;
+    color: #eee;
+}
+footer a:hover {
+    text-decoration: none;
+    color: #222;
 }
 label {
     min-width: 20vw;
