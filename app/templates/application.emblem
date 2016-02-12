@@ -32,5 +32,8 @@ footer
         li
           = link-to 'partner'
             | Partner
+        li
+          = link-to 'press'
+            | Press
 
 = partial '_imprint'
