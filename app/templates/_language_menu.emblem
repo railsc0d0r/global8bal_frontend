@@ -7,3 +7,4 @@
       li
         a href="#" click="'setLocale' language"
           img src="#{flag_asset_url language}" alt="#{language}" class="flag_icon"
+          | #{language}
