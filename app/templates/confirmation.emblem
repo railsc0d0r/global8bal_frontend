@@ -1,0 +1,20 @@
+= modal-dialog closeDialogAction="close"
+  if errorMessage
+     #error_messages
+       ' #{i18n_t 'login.confirmation_failed'}:
+       = errorMessage
+  form submit='confirm'
+    .row
+      .input-group
+        label.input-group-addon for='password'
+          | #{i18n_t 'activerecord.attributes.user.password'}:
+        = input id='password' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.user.password')) type='password' value=password class="form-control"
+    .row
+      .input-group
+        label.input-group-addon for='password_confirmation'
+          | #{i18n_t 'activerecord.attributes.user.password_confirmation'}:
+        = input id='password_confirmation' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.user.password_confirmation')) type='password' value=password_confirmation class="form-control"
+    br
+    .row
+      .input-group
+        input type='submit' value='#{i18n_t 'form.confirm'}'
