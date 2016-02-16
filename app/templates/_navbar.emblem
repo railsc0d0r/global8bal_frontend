@@ -25,8 +25,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top
             if currentUser.is_admin
               = partial "_admin_menu"
             a href="#" class="btn btn-default" click='invalidateSession'
-              = i18n_t 'navigation.logout'
+              img src="#{rails_asset_url 'icons/logout_icon.svg'}" alt="#{i18n_t 'navigation.logout'}" class="flag_icon"
           else
+            = link-to 'signup' class="btn btn-default"
+              img src="#{rails_asset_url 'icons/signup_icon.svg'}" alt="#{i18n_t 'navigation.signup'}" class="flag_icon"
             = link-to 'login' class="btn btn-default"
-              = i18n_t 'navigation.login'
+              img src="#{rails_asset_url 'icons/login_icon.svg'}" alt="#{i18n_t 'navigation.login'}" class="flag_icon"
           = partial "_language_menu"
