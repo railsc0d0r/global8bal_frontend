@@ -6,18 +6,22 @@ EmployeesNewController = Ember.Controller.extend(
   actions:
     createEmployee: () ->
         role_name = this.get('role.name') if this.get('role')
-        password = this.get('password')
-        password_confirmation = this.get('password_confirmation')
-        firstname = this.get('firstname')
-        lastname = this.get('lastname')
-        email = this.get('email')
-        street = this.get('street')
-        street2 = this.get('street2')
-        zip = this.get('zip')
-        city = this.get('city')
         country = this.get('country.name') if this.get('country')
 
-        attributes = { role_name: role_name, password: password, password_confirmation: password_confirmation, email: email, firstname: firstname, lastname: lastname, street: street, street2: street2, zip: zip, city: city, country: country }
+        attributes = {
+                role_name: role_name,
+                password: this.get('password'),
+                password_confirmation: this.get('password_confirmation'),
+                email: this.get('email'),
+                firstname: this.get('firstname'),
+                lastname: this.get('lastname'),
+                street: this.get('street'),
+                street2: this.get('street2'),
+                zip: this.get('zip'),
+                city: this.get('city'),
+                country: country
+        }
+
         employee = this.store.createRecord('employee', attributes)
         that = this
         employee.save().then(() ->
