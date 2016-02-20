@@ -8,6 +8,9 @@ MessagesController = Ember.Controller.extend(
     loggingOut: () ->
       this._showMessage("Logging out.")
     
+    successfullySignedUp: (object_name) ->
+      this._showMessage(object_name + " successfully signed up. Please check your emails.")
+
     successfullyCreated: (object_name) ->
       this._showMessage(object_name + " successfully created.")
     
