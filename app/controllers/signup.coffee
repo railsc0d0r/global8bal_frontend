@@ -65,6 +65,7 @@ SignupController = Ember.Controller.extend(
             this.set('zip', null)
             this.set('city', null)
             this.set('country', null)
+            this.set('date_of_birth', null)
             this.set('errorMessage', null)
             $('.modal').modal('hide')
             this.transitionToRoute('index')
