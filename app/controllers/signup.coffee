@@ -3,9 +3,26 @@
 SignupController = Ember.Controller.extend(
   errorHandler: Ember.inject.service('handle-errors')
 
+  endDate: Ember.computed(() ->
+          endDate = new Date()
+          endDate.setFullYear(endDate.getFullYear()-18)
+          return endDate
+        )
+
+  defaultViewDate: Ember.computed(() ->
+          now = new Date()
+          defaultViewDate = {
+                  year: now.getFullYear() - 18
+                  month: now.getMonth()
+                  day: now.getDate()
+                }
+        )
+
   actions:
     signUpPlayer: () ->
         country = this.get('country.name') if this.get('country')
+        date_of_birth = this.get('date_of_birth')
+        date_of_birth.setTime( date_of_birth.getTime() - new Date().getTimezoneOffset()*60*1000 )
 
         attributes = {
                 email: this.get('email'),
@@ -17,7 +34,7 @@ SignupController = Ember.Controller.extend(
                 city: this.get('city'),
                 country: country,
                 card_number: this.get('card_number'),
-                date_of_birth: this.get('date_of_birth')        
+                date_of_birth: date_of_birth
         }
 
         player = this.store.createRecord('player', attributes)
