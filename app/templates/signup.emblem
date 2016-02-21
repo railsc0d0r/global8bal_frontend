@@ -54,7 +54,7 @@
       .input-group
         label.input-group-addon for='date_of_birth'
           | #{i18n_t 'activerecord.attributes.person.date_of_birth'}:
-        = bootstrap-datepicker id='date_of_birth' value=date_of_birth language=I18n.locale endDate=endDate defaultViewDate=defaultViewDate startView=2 class='form-control'
+        = bootstrap-datepicker id='date_of_birth' value=date_of_birth language=I18n.locale endDate=endDate defaultViewDate=defaultViewDate startView=2 disableTouchKeyboard=true maxViewMode=3 class='form-control'
     br
     .row
       .input-group
