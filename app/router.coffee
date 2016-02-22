@@ -16,7 +16,7 @@ Router.map ->
     return
   @route 'login'
   @route 'signup'
-  @route 'confirmation', path: 'confirmation/:token'
+  @route 'confirmation', path: 'confirmation/:confirmation_token'
   @route 'users', -> 
     @route 'new'
     return
