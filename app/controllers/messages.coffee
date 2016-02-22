@@ -11,6 +11,9 @@ MessagesController = Ember.Controller.extend(
     successfullySignedUp: (object_name) ->
       this._showMessage(object_name + " successfully signed up. Please check your emails.")
 
+    successfullyConfirmed: () ->
+      this._showMessage("Successfully confirmed your account.")
+
     successfullyCreated: (object_name) ->
       this._showMessage(object_name + " successfully created.")
     
