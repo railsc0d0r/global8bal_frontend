@@ -18,6 +18,16 @@ SignupController = Ember.Controller.extend(
                 }
         )
 
+  acceptedTermsOfUse: false
+
+  readPrivacyPolicy: false
+
+  readRules: false
+
+  isDisabled: Ember.computed('acceptedTermsOfUse', 'readPrivacyPolicy', 'readRules', () ->
+          !(this.get('acceptedTermsOfUse') and this.get('readPrivacyPolicy') and this.get('readRules'))
+        )
+
   actions:
     signUpPlayer: () ->
         country = this.get('country.name') if this.get('country')
