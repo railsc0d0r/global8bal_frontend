@@ -57,5 +57,21 @@
         = bootstrap-datepicker id='date_of_birth' value=date_of_birth language=I18n.locale endDate=endDate defaultViewDate=defaultViewDate startView=2 disableTouchKeyboard=true maxViewMode=3 class='form-control'
     br
     .row
+      = input id='acceptedTermsOfUse'  type="checkbox" checked=acceptedTermsOfUse
+      label for='acceptedTermsOfUse'
+        | #{i18n_t 'form.accepted' object="Terms of Use"}
+    .row
+      = input id='readPrivacyPolicy'  type="checkbox" checked=readPrivacyPolicy
+      label for='readPrivacyPolicy'
+        | #{i18n_t 'form.read' object="Privacy Policy"}
+    .row
+      = input id='readRules'  type="checkbox" checked=readRules
+      label for='readRules'
+        | #{i18n_t 'form.read' object="Rules"}
+    br
+    .row
       .input-group
-        input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
+        if isDisabled
+          input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}" disabled="disabled"
+        else
+          input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
