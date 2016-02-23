@@ -58,16 +58,22 @@
     br
     .row
       = input id='acceptedTermsOfUse'  type="checkbox" checked=acceptedTermsOfUse
+      '
       label for='acceptedTermsOfUse'
-        | #{i18n_t 'form.accepted' object="Terms of Use"}
-    .row
-      = input id='readPrivacyPolicy'  type="checkbox" checked=readPrivacyPolicy
-      label for='readPrivacyPolicy'
-        | #{i18n_t 'form.read' object="Privacy Policy"}
+        = link-to 'terms_of_use' target="_blank"
+          | #{i18n_t 'form.accepted' object="Terms of Use"}
     .row
       = input id='readRules'  type="checkbox" checked=readRules
+      '
       label for='readRules'
-        | #{i18n_t 'form.read' object="Rules"}
+        = link-to 'rules' target="_blank"
+          | #{i18n_t 'form.read' object="Rules"}
+    .row
+      = input id='readPrivacyPolicy'  type="checkbox" checked=readPrivacyPolicy
+      '
+      label for='readPrivacyPolicy'
+        = link-to 'privacy' target="_blank"
+          | #{i18n_t 'form.read' object="Privacy Policy"}
     br
     .row
       .input-group
