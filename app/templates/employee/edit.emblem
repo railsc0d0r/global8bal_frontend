@@ -12,16 +12,6 @@
         = view 'select' id='role' content=currentRoles optionLabelPath="content.name" optionValuePath="content.name" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.models.role' count=1)) selection=role value = model.role_name class='form-control'
     .row
       .input-group
-        label.input-group-addon for='password'
-          | #{i18n_t 'activerecord.attributes.user.password'}:
-        = input id='password' type="password" placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.user.password')) value=model.password class='form-control'
-    .row
-      .input-group
-        label.input-group-addon for='password_confirmation'
-          | #{i18n_t 'activerecord.attributes.user.password_confirmation'}:
-        = input id='password_confirmation' type="password" placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.user.password_confirmation')) value=model.password_confirmation class='form-control'
-    .row
-      .input-group
         label.input-group-addon for='firstname'
           | #{i18n_t 'activerecord.attributes.person.firstname'}:
         = input id='firstname' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.firstname')) value=model.firstname class='form-control'

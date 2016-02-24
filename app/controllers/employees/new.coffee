@@ -10,8 +10,6 @@ EmployeesNewController = Ember.Controller.extend(
 
         attributes = {
                 role_name: role_name,
-                password: this.get('password'),
-                password_confirmation: this.get('password_confirmation'),
                 email: this.get('email'),
                 firstname: this.get('firstname'),
                 lastname: this.get('lastname'),
@@ -43,8 +41,6 @@ EmployeesNewController = Ember.Controller.extend(
 
   _close: () ->
             this.set('role', null)
-            this.set('password', null)
-            this.set('password_confirmation', null)
             this.set('email', null)
             this.set('firstname', null)
             this.set('lastname', null)
