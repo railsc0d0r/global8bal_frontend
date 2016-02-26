@@ -24,6 +24,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           if session.isAuthenticated
             if currentUser.is_admin
               = partial "_admin_menu"
+            = link-to 'account' class="btn btn-default"
+              img src="#{rails_asset_url 'icons/account_icon.svg'}" alt="#{i18n_t 'navigation.account'}" class="flag_icon"
             a href="#" class="btn btn-default" click='invalidateSession'
               img src="#{rails_asset_url 'icons/logout_icon.svg'}" alt="#{i18n_t 'navigation.logout'}" class="flag_icon"
           else
