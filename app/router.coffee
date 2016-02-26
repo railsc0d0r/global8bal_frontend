@@ -38,6 +38,7 @@ Router.map ->
   @route 'partner'
   @route 'press'
   @route 'privacy'
+  @route 'account'
   return
 
 `export default Router`
