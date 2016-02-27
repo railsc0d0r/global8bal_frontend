@@ -1,0 +1,12 @@
+.col-md-2
+ .row
+   | #{i18n_t 'activerecord.models.address' count=1}:
+.col-md-4
+ .row
+   | #{model.street}
+ .row
+   | #{model.street2}
+ .row
+   | #{model.zip} #{model.city}
+ .row
+   | #{model.country}

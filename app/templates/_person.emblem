@@ -1,0 +1,6 @@
+.row  
+  | #{i18n_t 'activerecord.attributes.person.name'}: #{model.firstname} #{model.lastname}
+.row
+  | #{i18n_t 'activerecord.attributes.user.login'}: #{model.username}
+.row
+  | #{i18n_t 'activerecord.attributes.person.email'}: #{model.email}
