@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
-export function railsAssetUrl(file) {
+export default Ember.Helper.helper(function(params) {
+  let file = params[0];
   return window.assets.images[file];
-}
-
-export default Ember.Handlebars.makeBoundHelper(railsAssetUrl);
+});
