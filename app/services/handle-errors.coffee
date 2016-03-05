@@ -1,4 +1,5 @@
 `import Ember from 'ember'`
+`import _ from 'lodash/lodash'`
 
 HandleErrorsService = Ember.Service.extend(
   joinErrorMessages: (errors) ->
