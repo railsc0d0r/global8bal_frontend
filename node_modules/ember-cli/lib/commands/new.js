@@ -1,9 +1,9 @@
 'use strict';
 
-var chalk        = require('chalk');
-var Command      = require('../models/command');
-var Promise      = require('../ext/promise');
-var Project      = require('../models/project');
+var chalk              = require('chalk');
+var Command            = require('../models/command');
+var Promise            = require('../ext/promise');
+var Project            = require('../models/project');
 var SilentError        = require('silent-error');
 var validProjectName   = require('../utilities/valid-project-name');
 var normalizeBlueprint = require('../utilities/normalize-blueprint-option');
@@ -14,13 +14,13 @@ module.exports = Command.extend({
   works: 'outsideProject',
 
   availableOptions: [
-    { name: 'dry-run', type: Boolean, default: false, aliases: ['d'] },
-    { name: 'verbose', type: Boolean, default: false, aliases: ['v'] },
-    { name: 'blueprint', type: String, default: 'app', aliases: ['b'] },
-    { name: 'skip-npm', type: Boolean, default: false, aliases: ['sn'] },
+    { name: 'dry-run',    type: Boolean, default: false, aliases: ['d'] },
+    { name: 'verbose',    type: Boolean, default: false, aliases: ['v'] },
+    { name: 'blueprint',  type: String,  default: 'app', aliases: ['b'] },
+    { name: 'skip-npm',   type: Boolean, default: false, aliases: ['sn'] },
     { name: 'skip-bower', type: Boolean, default: false, aliases: ['sb'] },
-    { name: 'skip-git', type: Boolean, default: false, aliases: ['sg'] },
-    { name: 'directory', type: String , aliases: ['dir'] }
+    { name: 'skip-git',   type: Boolean, default: false, aliases: ['sg'] },
+    { name: 'directory',  type: String ,                 aliases: ['dir'] }
   ],
 
   anonymousOptions: [
@@ -40,7 +40,7 @@ module.exports = Command.extend({
       return Promise.reject(new SilentError(message));
     }
 
-    if (commandOptions.dryRun){
+    if (commandOptions.dryRun) {
       commandOptions.skipGit = true;
     }
 
@@ -62,16 +62,11 @@ module.exports = Command.extend({
       commandOptions.directory = packageName;
     }
 
-    var createAndStepIntoDirectory  = new this.tasks.CreateAndStepIntoDirectory({
+    var createAndStepIntoDirectory = new this.tasks.CreateAndStepIntoDirectory({
       ui: this.ui,
       analytics: this.analytics
     });
     var InitCommand = this.commands.Init;
-
-    var gitInit = new this.tasks.GitInit({
-      ui: this.ui,
-      project: this.project
-    });
 
     var initCommand = new InitCommand({
       ui: this.ui,
@@ -85,7 +80,6 @@ module.exports = Command.extend({
         directoryName: commandOptions.directory,
         dryRun: commandOptions.dryRun
       })
-      .then(initCommand.run.bind(initCommand, commandOptions, rawArgs))
-      .then(gitInit.run.bind(gitInit, commandOptions, rawArgs));
+      .then(initCommand.run.bind(initCommand, commandOptions, rawArgs));
   }
 });

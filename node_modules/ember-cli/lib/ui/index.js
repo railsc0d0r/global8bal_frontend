@@ -19,10 +19,10 @@ module.exports = UI;
   requesting input from the user. This becomes useful when wanting to adjust
   logLevels, or mock input/output for tests.
 
-  new UI{
+  new UI({
     inputStream: process.stdin,
     outputStream: process.stdout,
-    writeLevel: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR'
+    writeLevel: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR',
     ci: true | false
   });
 
@@ -44,8 +44,8 @@ function UI(options) {
   this.outputStream.setMaxListeners(0);
   this.outputStream.pipe(this.actualOuputStream);
 
-  // Input stream
   this.inputStream = options.inputStream;
+  this.errorStream = options.errorStream;
 
   this.writeLevel = options.writeLevel || 'INFO';
   this.ci = !!options.ci;
@@ -61,7 +61,9 @@ function UI(options) {
   @param {Number} writeLevel
 */
 UI.prototype.write = function(data, writeLevel) {
-  if (this.writeLevelVisible(writeLevel)) {
+  if (writeLevel === 'ERROR') {
+    this.errorStream.write(data);
+  } else if (this.writeLevelVisible(writeLevel)) {
     this.outputStream.write(data);
   }
 };
@@ -76,9 +78,7 @@ UI.prototype.write = function(data, writeLevel) {
   @param {Number} writeLevel
 */
 UI.prototype.writeLine = function(data, writeLevel) {
-  if (this.writeLevelVisible(writeLevel)) {
-    this.write(data + EOL);
-  }
+  this.write(data + EOL, writeLevel);
 };
 
 /**

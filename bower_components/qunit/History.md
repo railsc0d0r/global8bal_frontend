@@ -1,3 +1,41 @@
+
+1.20.0 / 2015-10-27
+==================
+
+  * Assert: Exposes assert.raises() to the global scope
+  * Assert: Add a calls count parameter on assert.async
+  * Build: Improve grunt speed using grunt-concurrent
+  * Core: Implement QUnit.only
+  * Core: Support Symbol types on QUnit.equiv
+  * Core: QUnit.start fails if called with a non-numeric argument
+  * Core: Implement Nested modules
+  * Core: Equivalency for desdendants of null constructors
+  * HTML Reporter: Adds indicator for filtered test
+  * HTML Reporter: Collapse details for successive failed tests
+  * Test: Fix regression when a failing test canceled the module hooks
+  * Tests: Isolate and improve tests for Object equivalency
+  * Tests: Split browserstack runs on CI to avoid timeout errors
+
+1.19.0 / 2015-09-01
+==================
+
+  * Assert: Add support to ES6' Map and Set equiv objects
+  * Build: Enable IRC notifications for Travis CI
+  * Build: Add 'Readme' to commitplease components
+  * Build: Remove unintended QUnit global export on Node
+  * Build: Remove testSwarm job
+  * Core: Implement QUnit.stack
+  * Dump: Escape backslash when quoting strings
+  * HTML Reporter: Avoid readyState issue with PhantomJS
+  * HTML Reporter: HTML reporter enhancements for negative asserts
+  * HTML Reporter: Show diff only when it helps
+  * Tests: Avoid loosen errors on autostart test
+  * Tests: HTML Reporter tests are now isolated with reordering disabled
+  * Tests: Rename stack error tests
+  * Test: Release module hooks to avoid memory leaks
+  * Test: Don't pass Promise fulfillment value to QUnit.start
+  * Test: Source Displayed Even for Passed Test
+
 1.18.0 / 2015-04-03
 ==================
 

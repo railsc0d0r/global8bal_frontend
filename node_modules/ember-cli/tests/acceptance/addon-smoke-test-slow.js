@@ -11,6 +11,7 @@ var chalk      = require('chalk');
 var expect     = require('chai').expect;
 
 var runCommand          = require('../helpers/run-command');
+var ember               = require('../helpers/ember');
 var copyFixtureFiles    = require('../helpers/copy-fixture-files');
 var killCliProcess      = require('../helpers/kill-cli-process');
 var assertDirEmpty      = require('../helpers/assert-dir-empty');
@@ -57,7 +58,7 @@ describe('Acceptance: addon-smoke-test', function() {
   });
 
   it('ember addon foo, clean from scratch', function() {
-    return runCommand(path.join('.', 'node_modules', 'ember-cli', 'bin', 'ember'), 'test');
+    return ember(['test']);
   });
 
   it('ember addon without addon/ directory', function() {
@@ -181,12 +182,24 @@ describe('Acceptance: addon-smoke-test', function() {
           resolve(output);
         });
       }).then(function(output) {
-        var unnecessaryFiles = ['.gitkeep', '.travis.yml', 'ember-cli-build.js', '.editorconfig', 'testem.json', '.ember-cli', 'bower.json', '.bowerrc'];
-        var unnecessaryFolders = ['tests/', 'bower_components/'];
+        var unnecessaryFiles = [
+          '.gitkeep',
+          '.travis.yml',
+          '.editorconfig',
+          'testem.json',
+          '.ember-cli',
+          'bower.json',
+          '.bowerrc'
+        ];
 
-        unnecessaryFiles.concat(unnecessaryFolders).forEach(function(file) {
-          expect(output).to.not.match(new RegExp(file), 'expected packaged addon to not contain file or folder \'' + file + '\'');
-        });
+        var unnecessaryFolders = [
+          'tests/',
+          'bower_components/'
+        ];
+
+        var outputFiles = output.split('\n');
+        expect(outputFiles).to.not.contain(unnecessaryFiles);
+        expect(outputFiles).to.not.contain(unnecessaryFolders);
       }, function(error) {
         handleError(error, 'tar');
       });

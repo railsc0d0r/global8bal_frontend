@@ -5,12 +5,10 @@ var commandOptions = require('../../factories/command-options');
 var NewCommand     = require('../../../lib/commands/new');
 
 describe('new command', function() {
-  var command, options;
+  var command;
 
   beforeEach(function() {
-    options = commandOptions({
-      settings: {},
-
+    var options = commandOptions({
       project: {
         isEmberCLIProject: function() {
           return false;
@@ -92,5 +90,4 @@ describe('new command', function() {
       expect(error.message).to.equal('Trying to generate an application structure in this directory? Use `ember init` instead.');
     });
   });
-
 });

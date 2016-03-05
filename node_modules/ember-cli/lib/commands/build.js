@@ -2,6 +2,7 @@
 
 var path    = require('path');
 var Command = require('../models/command');
+var win     = require('../utilities/windows-admin');
 
 module.exports = Command.extend({
   name: 'build',
@@ -9,10 +10,10 @@ module.exports = Command.extend({
   aliases: ['b'],
 
   availableOptions: [
-    { name: 'environment', type: String, default: 'development', aliases: ['e',{'dev' : 'development'}, {'prod' : 'production'}] },
-    { name: 'output-path', type: path, default: 'dist/', aliases: ['o'] },
-    { name: 'watch', type: Boolean, default: false, aliases: ['w'] },
-    { name: 'watcher', type: String }
+    { name: 'environment', type: String,  default: 'development', aliases: ['e', { 'dev': 'development' }, { 'prod': 'production' }] },
+    { name: 'output-path', type: path,    default: 'dist/',       aliases: ['o'] },
+    { name: 'watch',       type: Boolean, default: false,         aliases: ['w'] },
+    { name: 'watcher',     type: String }
   ],
 
   run: function(commandOptions) {
@@ -22,7 +23,10 @@ module.exports = Command.extend({
       analytics: this.analytics,
       project: this.project
     });
-    return buildTask.run(commandOptions);
+
+    return win.checkWindowsElevation(this.ui).then(function() {
+      return buildTask.run(commandOptions);
+    });
   },
 
   taskFor: function(options) {

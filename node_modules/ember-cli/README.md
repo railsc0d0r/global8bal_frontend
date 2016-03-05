@@ -10,7 +10,7 @@
 
 The Ember.js command line utility.
 
-Supports node 0.12.x and npm 2.6.x.
+Supports node 0.12.x and npm 2.7.x and 3.x.
 
 ## Community
 * irc: #ember-cli on freenode
@@ -21,7 +21,7 @@ Supports node 0.12.x and npm 2.6.x.
 
 
 ## Project Elements
-Additional components of this project which are used at runtime in your application:
+Additional components of this project that are used at runtime in your application:
 * [ember-resolver](https://github.com/ember-cli/ember-resolver)
 * [loader](https://github.com/ember-cli/loader.js)
 * [ember-cli-shims](https://github.com/ember-cli/ember-cli-shims)
@@ -90,6 +90,10 @@ For Arch Linux or Manjaro Linux, in order for the parameters to be loaded at boo
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.d/99-sysctl.conf && sudo sysctl --system
 ```
 
+## Why is CI broken?
+
+If all pull requests are breaking on the same issue, we likely have a dependency that updated and broke our CI. [This app](http://package-hint-historic-resolver.herokuapp.com/?repoUrl=https%3A%2F%2Fgithub.com%2Fember-cli%2Fember-cli) can tell you which packages updated.
+
 ## Inline Documentation
 
 Use `npm run docs` to build HTML and JSON documentation with YUIDoc and place it in `docs/build/`. Please help by improving this documentation.
@@ -102,12 +106,6 @@ Use `npm run docs` to build HTML and JSON documentation with YUIDoc and place it
 
 * [Change history of new Ember-CLI apps](https://github.com/kellyselden/ember-cli-output)
 * [Change history of new Ember-CLI addons](https://github.com/kellyselden/ember-addon-output)
-
-## Donating
-
-All donations will support this project and treats for contributors.
-
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/stefanpenner/)
 
 ## License
 

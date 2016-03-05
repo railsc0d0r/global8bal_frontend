@@ -1,5 +1,5 @@
 // For browser, export only select globals
-if ( typeof window !== "undefined" ) {
+if ( defined.document ) {
 
 	// Deprecated
 	// Extend assert methods to QUnit and Global scope through Backwards compatibility
@@ -38,7 +38,8 @@ if ( typeof window !== "undefined" ) {
 				"notDeepEqual",
 				"strictEqual",
 				"notStrictEqual",
-				"throws"
+				"throws",
+				"raises"
 			];
 
 		for ( i = 0, l = keys.length; i < l; i++ ) {

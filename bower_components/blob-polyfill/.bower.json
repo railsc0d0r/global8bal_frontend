@@ -29,7 +29,6 @@
     "commit": "1ea5fce0ecc5b0efde6506b1e563828f9a489ebd"
   },
   "_source": "git://github.com/bjornstar/blob-polyfill.git",
-  "_target": "~1.0.20150320",
-  "_originalSource": "blob-polyfill",
-  "_direct": true
+  "_target": "^1.0.20150320",
+  "_originalSource": "blob-polyfill"
 }

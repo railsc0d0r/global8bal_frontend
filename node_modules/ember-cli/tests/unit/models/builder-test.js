@@ -76,9 +76,7 @@ describe('models/builder.js', function() {
     var parentPath = '..' + path.sep + '..' + path.sep;
 
     before(function() {
-      command = new BuildCommand(commandOptions({
-        settings: {}
-      }));
+      command = new BuildCommand(commandOptions());
 
       builder = new Builder({
         setupBroccoliBuilder: function() { },
@@ -142,6 +140,10 @@ describe('models/builder.js', function() {
           return Promise.resolve();
         },
 
+        outputReady: function() {
+          hooksCalled.push('outputReady');
+        },
+
         buildError: function() {
           hooksCalled.push('buildError');
         },
@@ -184,9 +186,18 @@ describe('models/builder.js', function() {
       });
     });
 
+    it('allows addons to add promises outputReady', function() {
+      var outputReady = stub(addon, 'outputReady');
+
+      return builder.build().then(function() {
+        expect(outputReady.called).to.equal(1, 'expected outputReady to be called');
+        expect(outputReady.calledWith[0][0]).to.equal(buildResults, 'expected outputReady to be called with the results');
+      });
+    });
+
     it('hooks are called in the right order', function() {
       return builder.build().then(function() {
-        expect(hooksCalled).to.deep.equal(['preBuild', 'build', 'postBuild']);
+        expect(hooksCalled).to.deep.equal(['preBuild', 'build', 'postBuild', 'outputReady']);
       });
     });
 
@@ -203,6 +214,22 @@ describe('models/builder.js', function() {
 
       return builder.build().then(function() {
         expect(called).to.deep.equal(['postBuild', 'processBuildResult']);
+      });
+    });
+
+    it('should call outputReady after processBuildResult', function() {
+      var called = [];
+
+      builder.processBuildResult = function() {
+        called.push('processBuildResult');
+      };
+
+      addon.outputReady = function() {
+        called.push('outputReady');
+      };
+
+      return builder.build().then(function() {
+        expect(called).to.deep.equal(['processBuildResult', 'outputReady']);
       });
     });
 
@@ -227,7 +254,7 @@ describe('models/builder.js', function() {
       });
     });
 
-    it('calls buildError and does not call build or postBuild when preBuild fails', function() {
+    it('calls buildError and does not call build, postBuild or outputReady when preBuild fails', function() {
       addon.preBuild = function() {
         hooksCalled.push('preBuild');
 
@@ -241,7 +268,7 @@ describe('models/builder.js', function() {
       });
     });
 
-    it('calls buildError and does not call postBuild when build fails', function() {
+    it('calls buildError and does not call postBuild or outputReady when build fails', function() {
       builder.builder.build = function() {
         hooksCalled.push('build');
 
@@ -266,6 +293,20 @@ describe('models/builder.js', function() {
         expect(false, 'should not succeed');
       }).catch(function() {
         expect(hooksCalled).to.deep.equal(['preBuild', 'build', 'postBuild', 'buildError']);
+      });
+    });
+
+    it('calls buildError when outputReady fails', function() {
+      addon.outputReady = function() {
+        hooksCalled.push('outputReady');
+
+        return Promise.reject(new Error('outputReady Error'));
+      };
+
+      return builder.build().then(function() {
+        expect(false, 'should not succeed');
+      }).catch(function() {
+        expect(hooksCalled).to.deep.equal(['preBuild', 'build', 'postBuild', 'outputReady', 'buildError']);
       });
     });
   });
