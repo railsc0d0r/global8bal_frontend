@@ -44,6 +44,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-local-storage": "^1.1.0",
+    "ember-lodash": "0.0.6",
     "ember-simple-auth": "^1.0.1",
     "rails-csrf": "^2.0.1"
   }
