@@ -22,6 +22,7 @@
     "bower": "*",
     "broccoli-asset-rev": "^2.2.0",
     "broccoli-funnel": "^1.0.1",
+    "ember-cable": "0.2.2",
     "ember-cli": "1.13.15",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.5",
