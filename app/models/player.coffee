@@ -16,6 +16,8 @@ Player = DS.Model.extend {
       country: DS.attr('string')
       username: DS.attr('string')
       card_number: DS.attr('string')
+      id_type: DS.attr('string')
+      id_number: DS.attr('string')
 }
 
 `export default Player`
