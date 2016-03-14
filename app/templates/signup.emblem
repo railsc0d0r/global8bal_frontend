@@ -52,6 +52,16 @@
         = input id='card_number' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.player.card_number')) value=card_number class='form-control'
     .row
       .input-group
+        label.input-group-addon for='id_type'
+          | #{i18n_t 'activerecord.attributes.player.id_type'}:
+        = view 'select' id='id_type' content=idTypes optionLabelPath="content" optionValuePath="content" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.attributes.player.id_type')) selection=id_type class='form-control'
+    .row
+      .input-group
+        label.input-group-addon for='id_number'
+          | #{i18n_t 'activerecord.attributes.player.id_number'}:
+        = input id='id_number' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.player.id_number')) value=id_number class='form-control'
+    .row
+      .input-group
         label.input-group-addon for='date_of_birth'
           | #{i18n_t 'activerecord.attributes.person.date_of_birth'}:
         = bootstrap-datepicker id='date_of_birth' value=date_of_birth language=I18n.locale endDate=endDate defaultViewDate=defaultViewDate startView=2 disableTouchKeyboard=true maxViewMode=3 class='form-control'
