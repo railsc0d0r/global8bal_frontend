@@ -3,6 +3,13 @@
 SignupController = Ember.Controller.extend(
   errorHandler: Ember.inject.service('handle-errors')
 
+  idTypes: Ember.computed('I18n.locale', ->
+          [
+            I18n.t('signup.passport')
+            I18n.t('signup.id-card')
+          ]
+        )
+
   endDate: Ember.computed(() ->
           endDate = new Date()
           endDate.setFullYear(endDate.getFullYear()-18)
