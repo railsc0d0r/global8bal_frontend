@@ -85,6 +85,8 @@ SignupController = Ember.Controller.extend(
             this.set('city', null)
             this.set('country', null)
             this.set('date_of_birth', null)
+            this.set('id_type', null)
+            this.set('id_number', null)
             this.set('errorMessage', null)
             this.set('acceptedTermsOfUse', false)
             this.set('readPrivacyPolicy', false)
