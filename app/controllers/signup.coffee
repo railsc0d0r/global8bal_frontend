@@ -51,7 +51,9 @@ SignupController = Ember.Controller.extend(
                 city: this.get('city'),
                 country: country,
                 card_number: this.get('card_number'),
-                date_of_birth: date_of_birth
+                date_of_birth: date_of_birth,
+                id_type: this.get('id_type'),
+                id_number: this.get('id_number')
         }
 
         player = this.store.createRecord('player', attributes)
