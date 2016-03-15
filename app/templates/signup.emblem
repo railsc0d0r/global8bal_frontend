@@ -54,7 +54,7 @@
       .input-group
         label.input-group-addon for='id_type'
           | #{i18n_t 'activerecord.attributes.player.id_type'}:
-        = view 'select' id='id_type' content=idTypes optionLabelPath="content" optionValuePath="content" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.attributes.player.id_type')) selection=id_type class='form-control'
+        = view 'select' id='id_type' content=idTypes optionLabelPath="content.t" optionValuePath="content.type" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.attributes.player.id_type')) selection=id_type class='form-control'
     .row
       .input-group
         label.input-group-addon for='id_number'

@@ -5,8 +5,8 @@ SignupController = Ember.Controller.extend(
 
   idTypes: Ember.computed('I18n.locale', ->
           [
-            I18n.t('signup.passport')
-            I18n.t('signup.id-card')
+            { type: 'Passport', t: I18n.t('signup.passport') }
+            { type: 'ID', t: I18n.t('signup.id-card') }
           ]
         )
 
