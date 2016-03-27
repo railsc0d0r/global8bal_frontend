@@ -7,10 +7,9 @@ AccountRoute = Ember.Route.extend(AuthenticatedRouteMixin,
         that = this
         this.get('store').findRecord('user', user_id).then( (currentUser) ->
                 objType = currentUser.get('auth_obj_type').toLowerCase()
-                objId = currentUser.get('auth_obj_id')
-
                 that.set('objType', objType)
-                return that.get('store').findRecord(objType, objId)
+
+                return currentUser.get('auth_obj')
         )
 
   renderTemplate: ->
