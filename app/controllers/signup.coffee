@@ -39,7 +39,7 @@ SignupController = Ember.Controller.extend(
     signUpPlayer: () ->
         country = this.get('country.name') if this.get('country')
         date_of_birth = this.get('date_of_birth')
-        date_of_birth.setTime( date_of_birth.getTime() - new Date().getTimezoneOffset()*60*1000 )
+        date_of_birth.setTime( date_of_birth.getTime() - new Date().getTimezoneOffset()*60*1000 ) if date_of_birth
 
         attributes = {
                 email: this.get('email'),
