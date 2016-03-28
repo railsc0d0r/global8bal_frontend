@@ -8,17 +8,17 @@
     .row
       .input-group
         label.input-group-addon for='firstname'
-          | #{i18n_t 'activerecord.attributes.person.firstname'}:
+          | #{i18n_t 'activerecord.attributes.person.firstname'}*:
         = input id='firstname' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.firstname')) value=firstname class='form-control'
     .row
       .input-group
         label.input-group-addon for='lastname'
-          | #{i18n_t 'activerecord.attributes.person.lastname'}:
+          | #{i18n_t 'activerecord.attributes.person.lastname'}*:
         = input id='lastname' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.lastname')) value=lastname class='form-control'
     .row
       .input-group
         label.input-group-addon for='email'
-          | #{i18n_t 'activerecord.attributes.person.email'}:
+          | #{i18n_t 'activerecord.attributes.person.email'}*:
         = input id='email' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.person.email')) value=email class='form-control'
     .row
       .input-group
@@ -38,12 +38,12 @@
     .row
       .input-group
         label.input-group-addon for='city'
-          | #{i18n_t 'activerecord.attributes.address.city'}:
+          | #{i18n_t 'activerecord.attributes.address.city'}*:
         = input id='city' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.address.city')) value=city class='form-control'
     .row
       .input-group
         label.input-group-addon for='country'
-          | #{i18n_t 'activerecord.models.country' count=1}:
+          | #{i18n_t 'activerecord.models.country' count=1}*:
         = view 'select' id='country' content=currentCountries optionLabelPath="content.name" optionValuePath="content.id" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.models.country' count=1)) selection=country class='form-control'
     .row
       .input-group
@@ -53,17 +53,17 @@
     .row
       .input-group
         label.input-group-addon for='id_type'
-          | #{i18n_t 'activerecord.attributes.player.id_type'}:
+          | #{i18n_t 'activerecord.attributes.player.id_type'}*:
         = view 'select' id='id_type' content=idTypes optionLabelPath="content.t" optionValuePath="content.type" prompt=(i18n_t 'form.select_attribute' name=(i18n_t 'activerecord.attributes.player.id_type')) selection=id_type class='form-control'
     .row
       .input-group
         label.input-group-addon for='id_number'
-          | #{i18n_t 'activerecord.attributes.player.id_number'}:
+          | #{i18n_t 'activerecord.attributes.player.id_number'}*:
         = input id='id_number' placeholder=(i18n_t 'form.enter_attribute' name=(i18n_t 'activerecord.attributes.player.id_number')) value=id_number class='form-control'
     .row
       .input-group
         label.input-group-addon for='date_of_birth'
-          | #{i18n_t 'activerecord.attributes.person.date_of_birth'}:
+          | #{i18n_t 'activerecord.attributes.person.date_of_birth'}*:
         = bootstrap-datepicker id='date_of_birth' value=date_of_birth language=I18n.locale endDate=endDate defaultViewDate=defaultViewDate startView=2 disableTouchKeyboard=true maxViewMode=3 class='form-control'
     br
     .row
@@ -91,3 +91,6 @@
           input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}" disabled="disabled"
         else
           input.btn.btn-default type='submit' value="#{i18n_t 'form.save'}"
+    br
+    .row
+      | #{i18n_t 'form.required_fields'}
