@@ -7,7 +7,6 @@ Employee = DS.Model.extend(
       title: DS.attr('string')
       email: DS.attr('string')
       phone: DS.attr('string')
-      date_of_birth: DS.attr('date')
       street: DS.attr('string')
       street2: DS.attr('string')
       zip: DS.attr('string')
