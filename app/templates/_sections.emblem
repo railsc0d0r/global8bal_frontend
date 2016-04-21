@@ -9,7 +9,7 @@ each model as |section|
       div.jumbotron.headline.parallax
         span.parallax_content
           h1
-            = section.currentContent.headline
+            == section.currentContent.headline
   else
     div.placeholder
   div.container.content
