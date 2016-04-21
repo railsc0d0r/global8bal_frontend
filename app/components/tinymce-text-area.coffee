@@ -8,6 +8,7 @@ TinymceTextAreaComponent = Ember.TextArea.extend(
                       view = this
                       tinymce.init(
                         selector: id,
+                        plugins: "link",
                         setup : (ed) ->
                                   view.set("editor", ed)
                                   ed.on("keyup change", () ->
