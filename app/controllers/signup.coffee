@@ -31,8 +31,10 @@ SignupController = Ember.Controller.extend(
 
   readRules: false
 
-  isDisabled: Ember.computed('acceptedTermsOfUse', 'readPrivacyPolicy', 'readRules', () ->
-          !(this.get('acceptedTermsOfUse') and this.get('readPrivacyPolicy') and this.get('readRules'))
+  waivedRightToRevokeContract: false
+
+  isDisabled: Ember.computed('acceptedTermsOfUse', 'readPrivacyPolicy', 'readRules', 'waivedRightToRevokeContract', () ->
+          !(this.get('acceptedTermsOfUse') and this.get('readPrivacyPolicy') and this.get('readRules') and this.get('waivedRightToRevokeContract'))
         )
 
   actions:

@@ -63,7 +63,7 @@
     .row
       .input-group
         label.input-group-addon for='date_of_birth'
-          | #{i18n_t 'activerecord.attributes.person.date_of_birth'}*:
+          | #{i18n_t 'activerecord.attributes.player.date_of_birth'}*:
         = bootstrap-datepicker id='date_of_birth' value=date_of_birth language=I18n.locale endDate=endDate defaultViewDate=defaultViewDate startView=2 disableTouchKeyboard=true maxViewMode=3 class='form-control'
     br
     .row
@@ -84,6 +84,12 @@
       label for='readPrivacyPolicy'
         = link-to 'privacy' target="_blank"
           | #{i18n_t 'form.read' object="Privacy Policy"}
+    .row
+      = input id='waivedRightToRevokeContract'  type="checkbox" checked=waivedRightToRevokeContract
+      '
+      label for='waivedRightToRevokeContract'
+        = link-to 'terms_of_use' target="_blank"
+          | #{i18n_t 'form.accepted' object="Terms of Use §5.4"}
     br
     .row
       .input-group
