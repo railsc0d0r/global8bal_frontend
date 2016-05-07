@@ -7,11 +7,6 @@ body {
   font-family: 'Oxygen', sans-serif;
   font-size: 18px;
 }
-ul {
-    list-style-type: none;
-    padding:0;
-    margin:0;
-}
 hr {
   border-color: #222;
 }
@@ -48,6 +43,11 @@ footer a:hover {
 label {
     min-width: 20vw;
     font-weight: 300;
+}
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
 }
 /* ============================================================
   Standard bootstrap-classes
@@ -90,6 +90,20 @@ label {
 }
 .content h1,h2,h3 {
   text-align: center;
+}
+.content li {
+    display: list-item;
+    padding-left: 1vw;
+}
+.content ul {
+    list-style: initial;
+    padding: 2vw;
+    margin: initial;
+}
+.content ol {
+    list-style: decimal outside none;
+    padding: 2vw;
+    margin: initial;
 }
 /* ============================================================
   My classes
